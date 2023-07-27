@@ -5,6 +5,7 @@ package apb3_package;
 import uvm_pkg::*;
 
 `include "apb3_transaction.sv"
+`include "apb3_configuration.sv"
 `include "apb3_master_driver.sv"
 `include "apb3_master_monitor.sv"
 `include "apb3_master_sequencer.sv"

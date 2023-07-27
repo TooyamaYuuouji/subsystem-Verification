@@ -24,3 +24,4 @@ run:
 clean:
 	rm -rf *.log *.log.* *.h *.key *.vpd
 	rm -rf csrc *.simv* DVE*
+	rm -rf .inter.vpd.uvm .restartSimSession.tcl.old

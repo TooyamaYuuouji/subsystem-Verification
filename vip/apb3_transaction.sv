@@ -11,8 +11,13 @@ class apb3_transaction extends uvm_sequence_item;
         `uvm_field_int(rdata, UVM_ALL_ON)
     `uvm_object_utils_end
 
-    function new(string name="apb3_transaction");
-        super.new(name);
-    endfunction: new
+    extern function new(string name="apb3_transaction");
     
 endclass: apb3_transaction
+
+/**************************************************
+* implement
+**************************************************/
+function apb3_transaction::new(string name="apb3_transaction");
+    super.new(name);
+endfunction: new

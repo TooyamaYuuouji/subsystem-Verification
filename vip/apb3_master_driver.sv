@@ -5,37 +5,10 @@ class apb3_master_driver extends uvm_driver #(apb3_transaction, apb3_transaction
 
     `uvm_component_utils(apb3_master_driver)
 
-    function new(string name="apb3_master_driver", uvm_component parent=null);
-        super.new(name, parent);
-    endfunction: new
-
-    function void build_phase(uvm_phase phase);
-        super.build_phase(phase);
-
-        if(!uvm_config_db #(virtual apb3_interface)::get(this, "", "vif", vif)) begin
-            `uvm_fatal("CFGERR", "cannot get virtual apb3_interface from db!")
-        end
-    endfunction: build_phase
-
-    function void connect_phase(uvm_phase phase);
-        super.connect_phase(phase);
-
-        // if(vif == null) begin
-        //     `uvm_fatal("NULVIF", "virtual interface cannot be null!")
-        // end
-    endfunction: connect_phase
-
-    task main_phase(uvm_phase phase); 
-        while(1) begin
-            do_reset();
-            fork
-                @(negedge vif.PRESETn);
-                drive_thread();
-            join_any
-            disable fork;
-        end
-    endtask: main_phase
-
+    extern function new(string name="apb3_master_driver", uvm_component parent=null);
+    extern function void build_phase(uvm_phase phase);
+    extern function void connect_phase(uvm_phase phase);
+    extern task main_phase(uvm_phase phase);
     extern task do_reset();
     extern task drive_thread();
     extern task drive_one_pkt(ref apb3_transaction pkt);
@@ -47,6 +20,31 @@ endclass: apb3_master_driver
 /**************************************************
 * implement
 **************************************************/
+function apb3_master_driver::new(string name="apb3_master_driver", uvm_component parent=null);
+    super.new(name, parent);
+endfunction: new
+
+function void apb3_master_driver::build_phase(uvm_phase phase);
+    super.build_phase(phase);
+
+endfunction: build_phase
+
+function void apb3_master_driver::connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+
+endfunction: connect_phase
+
+task apb3_master_driver::main_phase(uvm_phase phase); 
+    while(1) begin
+        do_reset();
+        fork
+            @(negedge vif.PRESETn);
+            drive_thread();
+        join_any
+        disable fork;
+    end
+endtask: main_phase
+
 task apb3_master_driver::do_reset();
     vif.mst_drv_pcb.PSEL <= 0;
     vif.mst_drv_pcb.PENABLE <= 0;

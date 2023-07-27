@@ -54,7 +54,7 @@ initial begin: rstn_gen
 end
 
 initial begin: uvm_start
-    uvm_config_db #(virtual apb3_interface)::set(uvm_root::get(), "uvm_test_top", "vif", apb3_if);
+    uvm_config_db #(virtual apb3_interface)::set(uvm_root::get(), "uvm_test_top", "apb3_vif", apb3_if);
     run_test();
 end
 

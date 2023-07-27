@@ -7,6 +7,10 @@ VIP基本框架搭建完成
 # 0.03v
 加入virtual sequence和virtual sequencer机制，并修改了对应的文件索引等
 
+# 0.04V
+优化文件结构
+
+
 ## timer验证要点
 内部寄存器的读写由PCLKG上升沿控制，而不是PCLK，这一点尤其要注意
 PCLK应该由更上一级时钟生成，且上级时钟是双端时钟，方便PCLKG进行参考（PSEL和PENABLE可以上升沿触发，但与此同时的PCLKG必须在紧接着的一个时钟下降沿从零置一）

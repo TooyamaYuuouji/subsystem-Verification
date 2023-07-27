@@ -2,7 +2,6 @@
 class perips_env extends uvm_env;
 
     virtual_sequencer vsqr;
-
     apb3_master_agent agent;
 
     `uvm_component_utils(perips_env)

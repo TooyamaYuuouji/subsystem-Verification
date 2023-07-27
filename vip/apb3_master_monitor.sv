@@ -12,16 +12,10 @@ class apb3_master_monitor extends uvm_monitor;
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
 
-        if(!uvm_config_db #(virtual apb3_interface)::get(this, "", "vif", vif)) begin
-            `uvm_fatal("CFGERR", "cannot get virtual apb3_interface from db!")
-        end
     endfunction: build_phase
     
     function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
 
-        // if(vif == null) begin
-        //     `uvm_fatal("NULVIF", "virtual interface cannot be null!")
-        // end
     endfunction: connect_phase
 endclass: apb3_master_monitor
