@@ -33,9 +33,14 @@ function void timer_test::connect_phase(uvm_phase phase);
 endfunction: connect_phase
 
 task timer_test::main_phase(uvm_phase phase);
-    virtual_seq v_seq;
+    // virtual_seq v_seq;
 
-    v_seq = virtual_seq::type_id::create("v_seq");
-    v_seq.starting_phase = phase;
-    v_seq.start(env.vsqr);
+    // v_seq = virtual_seq::type_id::create("v_seq");
+    // v_seq.starting_phase = phase;
+    // v_seq.start(env.vsqr);
+    timer_seq seq;
+
+    seq = timer_seq::type_id::create("seq");
+    seq.starting_phase = phase;
+    seq.start(env.vsqr.apb3_mst_sqr);
 endtask: main_phase

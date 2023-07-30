@@ -26,7 +26,7 @@ function void perips_env::build_phase(uvm_phase phase);
     agent = apb3_master_agent::type_id::create("agent", this);
 
     uvm_config_db #(uvm_object_wrapper)::set(this, "agent.sequencer.main_phase", "default_sequence", null); // 禁止agent中sequencer的默认启动
-    uvm_config_db #(uvm_object_wrapper)::set(this, "vsqr.main_phase", "default_sequence", virtual_seq::get_type());
+    // uvm_config_db #(uvm_object_wrapper)::set(this, "vsqr.main_phase", "default_sequence", virtual_seq::get_type()); // 将所有sequence绑定到virtual sequence
 endfunction: build_phase
 
 function void perips_env::connect_phase(uvm_phase phase);

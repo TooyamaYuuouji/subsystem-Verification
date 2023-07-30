@@ -66,6 +66,7 @@ task apb3_master_driver::drive_thread();
 endtask: drive_thread
 
 task apb3_master_driver::drive_one_pkt(ref apb3_transaction pkt);
+    pkt.print();
     @(vif.mst_drv_pcb);
     vif.mst_drv_pcb.PSEL <= 1;
     vif.mst_drv_pcb.PENABLE <= 0;

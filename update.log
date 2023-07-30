@@ -7,9 +7,19 @@ VIP基本框架搭建完成
 # 0.03v
 加入virtual sequence和virtual sequencer机制，并修改了对应的文件索引等
 
-# 0.04V
+# 0.04v
 优化文件结构
 
+# 0.05v(bug)
+修改virtual sequence和virtual sequencer中的问题，避免出现两次发送的情况。
+问题似乎出现在env中default_sequence处，其他sequence直接被绑定为virtual_seq进行发送，但不确定这是不是发送两次sequence的原因。
+取消使用virtual sequence，改为test中直接指定使用virtual sequencer中的sequencer，不再发生该问题
+
+# 0.06v(搁置)
+修改dut，使用mux和其他组件组成dut。并修改对应的其他部分代码（driver、sequence、test等）使符合要求
+
+# 0.07v
+优化文件结构
 
 ## timer验证要点
 内部寄存器的读写由PCLKG上升沿控制，而不是PCLK，这一点尤其要注意

@@ -3,9 +3,10 @@ FILELIST = filelist.f
 TESTNAME = timer_test
 VERB = UVM_LOW
 SEED = 1
+FINISHTIME = 4us
 
-COMP = vcs -sverilog -Mupdate -timescale=1ns/1ps -ntb_opts uvm-1.2 -debug_access+all
-RUN = ./test.simv -sml +UVM_TESTNAME=$(TESTNAME) +UVM_VERBOSITY=$(VERB) +ntb_random_seed=$(SEED)
+COMP = vcs -full64 -sverilog -Mupdate -timescale=1ns/1ps -ntb_opts uvm-1.2 -debug_access+all
+RUN = ./test.simv -sml +UVM_TESTNAME=$(TESTNAME) +UVM_VERBOSITY=$(VERB) +ntb_random_seed=$(SEED) +vcs+finish+$(FINISHTIME)
 
 GUI ?= 0
 
@@ -23,5 +24,5 @@ run:
 
 clean:
 	rm -rf *.log *.log.* *.h *.key *.vpd
-	rm -rf csrc *.simv* DVE*
+	rm -rf csrc *.simv* DVE* stack.info*
 	rm -rf .inter.vpd.uvm .restartSimSession.tcl.old

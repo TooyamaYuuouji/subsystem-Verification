@@ -61,7 +61,7 @@ end
 initial begin: debug
     forever begin
         @(posedge clk);
-        `uvm_info("DEBUG", $sformatf("timer reg. nxt_curr_val=%x", DUT.nxt_curr_val), UVM_LOW)
+        // `uvm_info("DEBUG", $sformatf("timer reg. nxt_curr_val=%x", DUT.nxt_curr_val), UVM_LOW)
     end
 end
 

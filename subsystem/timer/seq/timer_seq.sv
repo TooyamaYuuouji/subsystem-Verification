@@ -8,6 +8,9 @@ class timer_seq extends apb3_master_base_seq;
     endfunction: new
 
     task body();
+        if(starting_phase != null) begin
+            starting_phase.raise_objection(this);
+        end
         // disable timer
         `uvm_do_with(req, {
             addr == 10'h000;
@@ -26,7 +29,10 @@ class timer_seq extends apb3_master_base_seq;
             wen == 1;
             wdata == 4'b1001;
         })
-        #0.5us;
+        #1us;
+        if(starting_phase != null) begin
+            starting_phase.drop_objection(this);
+        end
     endtask: body
 
 endclass: timer_seq

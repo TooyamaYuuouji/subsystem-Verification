@@ -7,7 +7,7 @@ import apb3_package::*;
 
 `include "virtual_sequencer.sv"
 `include "timer_seq.sv"
-`include "virtual_seq.sv"
+//`include "virtual_sequence.sv"
 
 `include "perips_env.sv"
 `include "perips_base_test.sv"

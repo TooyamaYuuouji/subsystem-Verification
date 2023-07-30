@@ -1,0 +1,56 @@
+register CTRL {
+    left_to_right;
+
+    field INT_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field EX {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field EX_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+}
+
+register VALUE {
+    field C_VAL {
+        bits 32;
+        reset 32'd0;
+        access rw;
+    }
+}
+
+register RELOAD {
+    field R_VALUE {
+        bits 32;
+        reset 32'd0;
+        access rw;
+    }
+}
+
+register INTCLEAR {
+    field INT {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+}
+
+block ral_timer {
+    bytes 9;
+    register CTRL @'h000;
+    register VALUE @'h004;
+    register RELOAD @'h008;
+    register INTCLEAR @'h00C;
+}
