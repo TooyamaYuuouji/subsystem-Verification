@@ -5,6 +5,7 @@ class apb3_master_agent extends uvm_agent;
     apb3_master_driver driver;
     apb3_master_monitor monitor;
     apb3_master_sequencer sequencer;
+    uvm_analysis_port #(apb3_transaction) mon_ap;
 
     `uvm_component_utils(apb3_master_agent)
 
@@ -40,6 +41,7 @@ function void apb3_master_agent::connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
     driver.seq_item_port.connect(sequencer.seq_item_export);
+    mon_ap = monitor.ap;
 endfunction: connect_phase
 
 task apb3_master_agent::main_phase(uvm_phase phase);

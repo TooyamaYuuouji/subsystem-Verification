@@ -2,6 +2,7 @@
 class perips_env extends uvm_env;
 
     virtual_sequencer vsqr;
+    perips_scoreboard sb;
     apb3_master_agent agent;
 
     `uvm_component_utils(perips_env)
@@ -23,6 +24,7 @@ function void perips_env::build_phase(uvm_phase phase);
     super.build_phase(phase);
 
     vsqr = virtual_sequencer::type_id::create("vsqr", this);
+    sb = perips_scoreboard::type_id::create("sb", this);
     agent = apb3_master_agent::type_id::create("agent", this);
 
     uvm_config_db #(uvm_object_wrapper)::set(this, "agent.sequencer.main_phase", "default_sequence", null); // 禁止agent中sequencer的默认启动
@@ -33,4 +35,5 @@ function void perips_env::connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
     vsqr.apb3_mst_sqr = agent.sequencer; // 建立连接
+    agent.mon_ap.connect(sb.mon_imp);
 endfunction: connect_phase

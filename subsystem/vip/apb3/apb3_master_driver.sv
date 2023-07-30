@@ -66,7 +66,8 @@ task apb3_master_driver::drive_thread();
 endtask: drive_thread
 
 task apb3_master_driver::drive_one_pkt(ref apb3_transaction pkt);
-    pkt.print();
+    // `uvm_info("DEBUG", $sformatf("check pkt in driver! Current time:%t", $realtime), UVM_LOW);
+    // pkt.print();
     @(vif.mst_drv_pcb);
     vif.mst_drv_pcb.PSEL <= 1;
     vif.mst_drv_pcb.PENABLE <= 0;

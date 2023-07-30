@@ -10,6 +10,7 @@ logic clk, rstn;
 logic clk2;
 
 apb3_interface apb3_if(.PCLK(clk), .PRESETn(rstn));
+dut_interface dut_if(.PCLK(clk), .PRESETn(rstn));
 
 cmsdk_apb_timer DUT(
     .PCLK(apb3_if.PCLK),
@@ -25,7 +26,7 @@ cmsdk_apb_timer DUT(
     .PREADY(apb3_if.PREADY),
     .PSLVERR(apb3_if.PSLVERR),
     .EXTIN(clk2),
-    .TIMERINT()
+    .TIMERINT(dut_if.timer_int)
 );
 
 initial begin: initialization
@@ -55,6 +56,7 @@ end
 
 initial begin: uvm_start
     uvm_config_db #(virtual apb3_interface)::set(uvm_root::get(), "uvm_test_top", "apb3_vif", apb3_if);
+    uvm_config_db #(virtual dut_interface)::set(uvm_root::get(), "uvm_test_top", "dut_vif", dut_if);
     run_test();
 end
 

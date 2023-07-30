@@ -38,9 +38,27 @@ task timer_test::main_phase(uvm_phase phase);
     // v_seq = virtual_seq::type_id::create("v_seq");
     // v_seq.starting_phase = phase;
     // v_seq.start(env.vsqr);
-    timer_seq seq;
 
-    seq = timer_seq::type_id::create("seq");
-    seq.starting_phase = phase;
-    seq.start(env.vsqr.apb3_mst_sqr);
+    timer_start_seq st_seq;
+    timer_clear_interrupt_seq int_seq;
+    timer_stop_seq sp_seq;
+
+    st_seq = timer_start_seq::type_id::create("st_seq");
+    assert(st_seq.randomize() with {count_num inside {[1:100]};});
+    `uvm_info("DEBUG", $sformatf("Counter Times: %d", st_seq.count_num), UVM_LOW);
+    // st_seq.count_num = 32'd10;
+    int_seq = timer_clear_interrupt_seq::type_id::create("int_seq");
+    sp_seq = timer_stop_seq::type_id::create("sp_seq");
+
+    phase.raise_objection(this);
+    sp_seq.start(env.vsqr.apb3_mst_sqr);
+    st_seq.start(env.vsqr.apb3_mst_sqr);
+    wait(dut_vif.mon_pcb.timer_int);
+    // // #0.5us;
+    // `uvm_info("DEBUG", $sformatf("Interrupt triggered! Current time:%t", $realtime), UVM_LOW);
+    int_seq.start(env.vsqr.apb3_mst_sqr);
+    // `uvm_info("DEBUG", $sformatf("Interrupt clear! Current time:%t", $realtime), UVM_LOW);
+    sp_seq.start(env.vsqr.apb3_mst_sqr);
+    #100ns;
+    phase.drop_objection(this);
 endtask: main_phase

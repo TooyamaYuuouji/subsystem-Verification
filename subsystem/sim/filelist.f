@@ -36,5 +36,6 @@
 +incdir+../uvm/test
 +incdir+../uvm/ral
 
+../uvm/tb/dut_interface.sv
 ../uvm/tb/top_pkg.sv
 ../uvm/tb/top_tb.sv

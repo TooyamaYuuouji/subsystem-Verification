@@ -19,7 +19,13 @@ VIP基本框架搭建完成
 修改dut，使用mux和其他组件组成dut。并修改对应的其他部分代码（driver、sequence、test等）使符合要求
 
 # 0.07v
-优化文件结构
+优化文件结构，给每一个外设都设置了对应的文件夹
+
+# 0.08v
+加入apb monitor和scoreboard。加入和dut输出有关的接口，增加并优化相关sequence，新sequence加入到timer_test中
+
+# 0.10v
+准备验证双端口timer
 
 ## timer验证要点
 内部寄存器的读写由PCLKG上升沿控制，而不是PCLK，这一点尤其要注意
