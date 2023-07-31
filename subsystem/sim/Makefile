@@ -1,6 +1,7 @@
 
 FILELIST = filelist.f
-TESTNAME = timer_test
+TB = dualtimer_tb
+TESTNAME = dualtimer_test
 VERB = UVM_LOW
 SEED = 1
 FINISHTIME = 4us
