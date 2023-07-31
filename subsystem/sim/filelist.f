@@ -18,6 +18,12 @@
 +incdir+../dualtimer/test
 ../dualtimer/dut/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers_frc.v
 ../dualtimer/dut/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers.v
+// watchdog
++incdir+../watchdog/dut/cmsdk_apb_watchdog/verilog
++incdir+../watchdog/seq
++incdir+../watchdog/test
+../watchdog/dut/cmsdk_apb_watchdog/verilog/cmsdk_apb_watchdog_frc.v
+../watchdog/dut/cmsdk_apb_watchdog/verilog/cmsdk_apb_watchdog.v
 
 /**************************************************
 * vip *
@@ -45,4 +51,5 @@
 ../uvm/tb/dut_interface.sv
 ../uvm/tb/top_pkg.sv
 //../uvm/tb/timer_tb.sv
-../uvm/tb/dualtimer_tb.sv
+//../uvm/tb/dualtimer_tb.sv
+../uvm/tb/watchdog_tb.sv

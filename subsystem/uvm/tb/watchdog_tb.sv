@@ -1,5 +1,5 @@
 
-module top_tb();
+module watchdog_tb();
 
 `include "uvm_macros.svh"
 import uvm_pkg::*;
@@ -12,9 +12,12 @@ logic clk2;
 apb3_interface apb3_if(.PCLK(clk), .PRESETn(rstn));
 dut_interface dut_if(.PCLK(clk), .PRESETn(rstn));
 
-cmsdk_apb_timer DUT(
+assign dut_if.watchdog_clk = clk2;
+assign dut_if.watchdog_clken = 1;
+assign dut_if.watchdog_rstn = rstn;
+
+cmsdk_apb_watchdog DUT(
     .PCLK(apb3_if.PCLK),
-    .PCLKG(apb3_if.PCLKG),
     .PRESETn(apb3_if.PRESETn),
     .PSEL(apb3_if.PSEL),
     .PADDR(apb3_if.PADDR[11:2]),
@@ -23,11 +26,13 @@ cmsdk_apb_timer DUT(
     .PWDATA(apb3_if.PWDATA),
     .ECOREVNUM(4'd0),
     .PRDATA(apb3_if.PRDATA),
-    .PREADY(apb3_if.PREADY),
-    .PSLVERR(apb3_if.PSLVERR),
-    .EXTIN(clk2),
-    .TIMERINT(dut_if.timer_int)
+    .WDOGCLK(dut_if.watchdog_clk),
+    .WDOGCLKEN(dut_if.watchdog_clken),
+    .WDOGRESn(dut_if.watchdog_rstn),
+    .WDOGINT(dut_if.watchdog_int),
+    .WDOGRES(dut_if.watchdog_res)
 );
+
 
 initial begin: initialization
     clk = 0;
@@ -63,8 +68,8 @@ end
 initial begin: debug
     forever begin
         @(posedge clk);
-        // `uvm_info("DEBUG", $sformatf("timer reg. nxt_curr_val=%x", DUT.nxt_curr_val), UVM_LOW)
+        // `uvm_info("DEBUG", $sformatf("watchdog reg. i_prdata=%x", DUT.wdog_pdata), UVM_LOW)
     end
 end
 
-endmodule: top_tb
+endmodule: watchdog_tb

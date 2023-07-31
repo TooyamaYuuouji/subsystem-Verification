@@ -14,6 +14,9 @@ import apb3_package::*;
 `include "dualtimer_start_seq.sv"
 `include "dualtimer_clear_interrupt_seq.sv"
 `include "dualtimer_stop_seq.sv"
+// watchdog
+`include "watchdog_start_seq.sv"
+`include "watchdog_clear_interrupt_seq.sv"
 
 `include "perips_scoreboard.sv"
 `include "perips_env.sv"
@@ -21,5 +24,6 @@ import apb3_package::*;
 
 `include "timer_test.sv"
 `include "dualtimer_test.sv"
+`include "watchdog_test.sv"
 
 endpackage: top_pkg
