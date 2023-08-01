@@ -1,13 +1,13 @@
 
 FILELIST = filelist.f
-TB = watchdog_tb
-TESTNAME = watchdog_test
+TB = uart_tb
+TESTNAME = uart_test
 VERB = UVM_LOW
 SEED = 1
-FINISHTIME = 4us
+#FINISHTIME = 10us
 
 COMP = vcs -full64 -sverilog -Mupdate -timescale=1ns/1ps -ntb_opts uvm-1.2 -debug_access+all
-RUN = ./test.simv -sml +UVM_TESTNAME=$(TESTNAME) +UVM_VERBOSITY=$(VERB) +ntb_random_seed=$(SEED) +vcs+finish+$(FINISHTIME)
+RUN = ./test.simv -sml +UVM_TESTNAME=$(TESTNAME) +UVM_VERBOSITY=$(VERB) +ntb_random_seed=$(SEED) #+vcs+finish+$(FINISHTIME)
 
 GUI ?= 0
 

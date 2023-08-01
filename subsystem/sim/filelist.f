@@ -24,6 +24,11 @@
 +incdir+../watchdog/test
 ../watchdog/dut/cmsdk_apb_watchdog/verilog/cmsdk_apb_watchdog_frc.v
 ../watchdog/dut/cmsdk_apb_watchdog/verilog/cmsdk_apb_watchdog.v
+// uart
++incdir+../uart/dut/cmsdk_apb_uart/verilog
++incdir+../uart/seq
++incdir+../uart/test
+../uart/dut/cmsdk_apb_uart/verilog/cmsdk_apb_uart.v
 
 /**************************************************
 * vip *
@@ -52,4 +57,5 @@
 ../uvm/tb/top_pkg.sv
 //../uvm/tb/timer_tb.sv
 //../uvm/tb/dualtimer_tb.sv
-../uvm/tb/watchdog_tb.sv
+//../uvm/tb/watchdog_tb.sv
+../uvm/tb/uart_tb.sv

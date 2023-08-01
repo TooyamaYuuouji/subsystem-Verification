@@ -17,6 +17,11 @@ import apb3_package::*;
 // watchdog
 `include "watchdog_start_seq.sv"
 `include "watchdog_clear_interrupt_seq.sv"
+// uart
+`include "uart_set_bauddiv_seq.sv"
+`include "uart_start_seq.sv"
+`include "uart_set_tx_data_seq.sv"
+`include "uart_clear_interrupt_seq.sv"
 
 `include "perips_scoreboard.sv"
 `include "perips_env.sv"
@@ -25,5 +30,6 @@ import apb3_package::*;
 `include "timer_test.sv"
 `include "dualtimer_test.sv"
 `include "watchdog_test.sv"
+`include "uart_test.sv"
 
 endpackage: top_pkg
