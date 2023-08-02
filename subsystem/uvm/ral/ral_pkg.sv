@@ -1,6 +1,9 @@
 
 package ral_pkg;
 
-`include "ral_timer.sv"
+	`include "uvm_macros.svh"
+	import uvm_pkg::*;
+
+	`include "ral_timer.sv"
 
 endpackage: ral_pkg

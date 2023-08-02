@@ -1,5 +1,5 @@
 
-module top_tb();
+module timer_tb();
 
 `include "uvm_macros.svh"
 import uvm_pkg::*;
@@ -67,4 +67,4 @@ initial begin: debug
     end
 end
 
-endmodule: top_tb
+endmodule: timer_tb

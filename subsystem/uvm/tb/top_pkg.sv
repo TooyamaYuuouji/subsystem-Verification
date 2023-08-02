@@ -4,6 +4,7 @@ package top_pkg;
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 import apb3_package::*;
+import ral_pkg::*;
 
 `include "virtual_sequencer.sv"
 // timer
@@ -27,6 +28,7 @@ import apb3_package::*;
 `include "perips_env.sv"
 `include "perips_base_test.sv"
 
+`include "timer_adapter.sv"
 `include "timer_test.sv"
 `include "dualtimer_test.sv"
 `include "watchdog_test.sv"

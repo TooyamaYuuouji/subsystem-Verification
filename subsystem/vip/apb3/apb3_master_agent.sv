@@ -26,10 +26,6 @@ endfunction: new
 function void apb3_master_agent::build_phase(uvm_phase phase);
     super.build_phase(phase);
 
-    if(!uvm_config_db #(apb3_configuration)::get(this, "", "config", config)) begin
-        `uvm_fatal("CFGERR", "cannot get virtual apb3_interface from db!")
-    end
-
     driver = apb3_master_driver::type_id::create("driver", this);
     driver.vif = config.apb3_vif;
     monitor = apb3_master_monitor::type_id::create("monitor", this);

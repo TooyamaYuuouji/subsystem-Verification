@@ -2,6 +2,8 @@
 class timer_test extends perips_base_test;
 
     apb3_configuration apb3_cfg;
+    ral_timer rm;
+    timer_adapter adapter;
 
     `uvm_component_utils(timer_test)
 
@@ -24,35 +26,70 @@ function void timer_test::build_phase(uvm_phase phase);
 
     apb3_cfg = apb3_configuration::type_id::create("apb3_cfg", this);
     apb3_cfg.apb3_vif = apb3_vif;
-    uvm_config_db #(apb3_configuration)::set(this, "env.agent", "config", apb3_cfg);
+	apb3_cfg.is_active = UVM_PASSIVE;
+    uvm_config_db #(apb3_configuration)::set(this, "env", "config", apb3_cfg);
+
+    rm = ral_timer::type_id::create("rm", this);
+    rm.configure(null, "");
+    rm.build();
+    rm.lock_model();
+    rm.reset();
+    rm.set_hdl_path_root("timer_tb.DUT");
+    adapter = timer_adapter::type_id::create("adapter");
 endfunction: build_phase
 
 function void timer_test::connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
+    rm.default_map.set_sequencer(env.vsqr.apb3_mst_sqr, adapter);
 endfunction: connect_phase
 
 task timer_test::main_phase(uvm_phase phase);
-    timer_start_seq st_seq;
-    timer_clear_interrupt_seq int_seq;
-    timer_stop_seq sp_seq;
+    // timer_start_seq st_seq;
+    // timer_clear_interrupt_seq int_seq;
+    // timer_stop_seq sp_seq;
 
-    st_seq = timer_start_seq::type_id::create("st_seq");
-    assert(st_seq.randomize() with {count_num inside {[1:100]};});
-    `uvm_info("DEBUG", $sformatf("Counter Times: %d", st_seq.count_num), UVM_LOW);
-    // st_seq.count_num = 32'd10;
-    int_seq = timer_clear_interrupt_seq::type_id::create("int_seq");
-    sp_seq = timer_stop_seq::type_id::create("sp_seq");
+    // st_seq = timer_start_seq::type_id::create("st_seq");
+    // assert(st_seq.randomize() with {count_num inside {[10:200]};});
+    // `uvm_info("DEBUG", $sformatf("Counter Times: %d", st_seq.count_num), UVM_LOW);
+    // // st_seq.count_num = 32'd10;
+    // int_seq = timer_clear_interrupt_seq::type_id::create("int_seq");
+    // sp_seq = timer_stop_seq::type_id::create("sp_seq");
+
+    // phase.raise_objection(this);
+    // sp_seq.start(env.vsqr.apb3_mst_sqr);
+    // st_seq.start(env.vsqr.apb3_mst_sqr);
+    // wait(dut_vif.mon_pcb.timer_int);
+    
+    // // // #0.5us;
+    // // `uvm_info("DEBUG", $sformatf("Interrupt triggered! Current time:%t", $realtime), UVM_LOW);
+    // int_seq.start(env.vsqr.apb3_mst_sqr);
+    // // `uvm_info("DEBUG", $sformatf("Interrupt clear! Current time:%t", $realtime), UVM_LOW);
+    // sp_seq.start(env.vsqr.apb3_mst_sqr);
+    // #100ns;
+    // phase.drop_objection(this);
+
+    uvm_status_e status;
+    uvm_reg_data_t value;
 
     phase.raise_objection(this);
-    sp_seq.start(env.vsqr.apb3_mst_sqr);
-    st_seq.start(env.vsqr.apb3_mst_sqr);
-    wait(dut_vif.mon_pcb.timer_int);
-    // // #0.5us;
-    // `uvm_info("DEBUG", $sformatf("Interrupt triggered! Current time:%t", $realtime), UVM_LOW);
-    int_seq.start(env.vsqr.apb3_mst_sqr);
-    // `uvm_info("DEBUG", $sformatf("Interrupt clear! Current time:%t", $realtime), UVM_LOW);
-    sp_seq.start(env.vsqr.apb3_mst_sqr);
-    #100ns;
+        rm.CTRL_EN.write(status, 0);
+        rm.RELOAD.write(status, 32'd14);
+        rm.CTRL.INT_EN.set(1);
+        rm.CTRL.EX.set(0);
+        rm.CTRL.EX_EN.set(0);
+        rm.CTRL.EN.set(1);
+        rm.CTRL.update(status);
+        rm.VALUE.peek(status, value);
+        `uvm_info("DEBUG", $sformatf("backdoor, VALUE = %x", value[31:0]), UVM_LOW);
+        wait(dut_vif.mon_pcb.timer_int); // 等待中断
+        rm.INTCLEAR.INT.write(status, 1);
+        rm.CTRL.INT_EN.set(1);
+        rm.CTRL.EX.set(0);
+        rm.CTRL.EX_EN.set(0);
+        rm.CTRL.EN.set(0);
+        rm.CTRL.update(status);
+        #100ns;
     phase.drop_objection(this);
+
 endtask: main_phase

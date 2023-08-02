@@ -53,9 +53,11 @@
 +incdir+../uvm/test
 +incdir+../uvm/ral
 
+../uvm/ral/ral_pkg.sv
+
 ../uvm/tb/dut_interface.sv
 ../uvm/tb/top_pkg.sv
-//../uvm/tb/timer_tb.sv
+../uvm/tb/timer_tb.sv
 //../uvm/tb/dualtimer_tb.sv
 //../uvm/tb/watchdog_tb.sv
-../uvm/tb/uart_tb.sv
+//../uvm/tb/uart_tb.sv

@@ -1,8 +1,8 @@
 
 class apb3_configuration extends uvm_object;
 
-    // apb3_transaction tran;
     virtual apb3_interface apb3_vif;
+    uvm_active_passive_enum is_active;
 
     `uvm_object_utils_begin(apb3_configuration)
     `uvm_object_utils_end

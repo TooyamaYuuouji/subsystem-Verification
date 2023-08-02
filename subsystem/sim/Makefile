@@ -1,9 +1,9 @@
 
 FILELIST = filelist.f
-TB = uart_tb
-TESTNAME = uart_test
+TB = timer_tb
+TESTNAME = timer_test
 VERB = UVM_LOW
-SEED = 1
+SEED = 5
 #FINISHTIME = 10us
 
 COMP = vcs -full64 -sverilog -Mupdate -timescale=1ns/1ps -ntb_opts uvm-1.2 -debug_access+all

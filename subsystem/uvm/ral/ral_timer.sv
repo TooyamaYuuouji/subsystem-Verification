@@ -1,5 +1,5 @@
-`ifndef RAL_TIMER
-`define RAL_TIMER
+`ifndef RAL_RAL_TIMER
+`define RAL_RAL_TIMER
 
 import uvm_pkg::*;
 
@@ -101,7 +101,7 @@ class ral_timer extends uvm_reg_block;
 	endfunction: new
 
    virtual function void build();
-      this.default_map = create_map("", 0, 4, UVM_LITTLE_ENDIAN, 0);
+      this.default_map = create_map("", 0, 9, UVM_LITTLE_ENDIAN, 0);
       this.CTRL = ral_reg_CTRL::type_id::create("CTRL",,get_full_name());
       this.CTRL.configure(this, null, "");
       this.CTRL.build();
