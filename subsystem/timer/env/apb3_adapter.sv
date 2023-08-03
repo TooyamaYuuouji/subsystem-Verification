@@ -1,22 +1,22 @@
 
-class timer_adapter extends uvm_reg_adapter;
+class apb3_adapter extends uvm_reg_adapter;
 
-    `uvm_object_utils(timer_adapter)
+    `uvm_object_utils(apb3_adapter)
 
-    extern function new(string name="timer_adapter");
+    extern function new(string name="apb3_adapter");
     extern function uvm_sequence_item reg2bus(const ref uvm_reg_bus_op rw);
     extern function void bus2reg(uvm_sequence_item bus_item, ref uvm_reg_bus_op rw);
 
-endclass: timer_adapter
+endclass: apb3_adapter
 
 /**************************************************
 * implement
 **************************************************/
-function timer_adapter::new(string name="timer_adapter");
+function apb3_adapter::new(string name="apb3_adapter");
     super.new(name);
 endfunction: new
 
-function uvm_sequence_item timer_adapter::reg2bus(const ref uvm_reg_bus_op rw);
+function uvm_sequence_item apb3_adapter::reg2bus(const ref uvm_reg_bus_op rw);
     apb3_transaction tr;
 
     tr = new("tr");
@@ -29,7 +29,7 @@ function uvm_sequence_item timer_adapter::reg2bus(const ref uvm_reg_bus_op rw);
     return tr;
 endfunction: reg2bus
 
-function void timer_adapter::bus2reg(uvm_sequence_item bus_item, ref uvm_reg_bus_op rw);
+function void apb3_adapter::bus2reg(uvm_sequence_item bus_item, ref uvm_reg_bus_op rw);
     apb3_transaction tr;
 
     if(!$cast(tr, bus_item)) begin

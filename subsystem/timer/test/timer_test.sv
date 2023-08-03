@@ -1,9 +1,9 @@
 
-class timer_test extends perips_base_test;
+class timer_test extends timer_base_test;
 
     apb3_configuration apb3_cfg;
     ral_timer rm;
-    timer_adapter adapter;
+    apb3_adapter adapter;
 
     `uvm_component_utils(timer_test)
 
@@ -35,12 +35,13 @@ function void timer_test::build_phase(uvm_phase phase);
     rm.lock_model();
     rm.reset();
     rm.set_hdl_path_root("timer_tb.DUT");
-    adapter = timer_adapter::type_id::create("adapter");
+    adapter = apb3_adapter::type_id::create("adapter");
 endfunction: build_phase
 
 function void timer_test::connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
+    rm.default_map.set_auto_predict(1);
     rm.default_map.set_sequencer(env.vsqr.apb3_mst_sqr, adapter);
 endfunction: connect_phase
 
@@ -73,8 +74,15 @@ task timer_test::main_phase(uvm_phase phase);
     uvm_reg_data_t value;
 
     phase.raise_objection(this);
-        rm.CTRL_EN.write(status, 0);
+        // 初始化
+        rm.CTRL_INT_EN.set(0);
+        rm.CTRL_EX.set(0);
+        rm.CTRL_EX_EN.set(0);
+        rm.CTRL_EN.set(0);
+        rm.CTRL.update(status);
+        // 发送激励
         rm.RELOAD.write(status, 32'd14);
+        
         rm.CTRL.INT_EN.set(1);
         rm.CTRL.EX.set(0);
         rm.CTRL.EX_EN.set(0);
@@ -82,8 +90,15 @@ task timer_test::main_phase(uvm_phase phase);
         rm.CTRL.update(status);
         rm.VALUE.peek(status, value);
         `uvm_info("DEBUG", $sformatf("backdoor, VALUE = %x", value[31:0]), UVM_LOW);
-        wait(dut_vif.mon_pcb.timer_int); // 等待中断
-        rm.INTCLEAR.INT.write(status, 1);
+        // 等待中断
+        wait(dut_vif.mon_pcb.timer_int);
+        // 清除中断
+        rm.INTCLEAR.INT.set(1);
+        rm.INTCLEAR.update(status);
+
+        rm.VALUE.read(status, value);
+
+        // 终止运行
         rm.CTRL.INT_EN.set(1);
         rm.CTRL.EX.set(0);
         rm.CTRL.EX_EN.set(0);
