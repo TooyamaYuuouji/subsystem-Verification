@@ -1,26 +1,26 @@
 
-class timer_base_test extends uvm_test;
+class base_test extends uvm_test;
 
     virtual apb3_interface apb3_vif;
     virtual dut_interface dut_vif;
     base_env env;
 
-    `uvm_component_utils(timer_base_test)
+    `uvm_component_utils(base_test)
 
-    extern function new(string name="timer_base_test", uvm_component parent=null);
+    extern function new(string name="base_test", uvm_component parent=null);
     extern function void build_phase(uvm_phase phase);
     extern function void final_phase(uvm_phase phase);
 
-endclass: timer_base_test
+endclass: base_test
 
 /**************************************************
 * implement
 **************************************************/
-function timer_base_test::new(string name="timer_base_test", uvm_component parent=null);
+function base_test::new(string name="base_test", uvm_component parent=null);
     super.new(name, parent);
 endfunction: new
 
-function void timer_base_test::build_phase(uvm_phase phase);
+function void base_test::build_phase(uvm_phase phase);
     super.build_phase(phase);
 
     env = base_env::type_id::create("env", this);
@@ -33,7 +33,7 @@ function void timer_base_test::build_phase(uvm_phase phase);
     end
 endfunction: build_phase
 
-function void timer_base_test::final_phase(uvm_phase phase);
+function void base_test::final_phase(uvm_phase phase);
     super.final_phase(phase);
 
     uvm_top.print_topology();

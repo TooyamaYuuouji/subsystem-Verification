@@ -1,5 +1,5 @@
 
-class timer_test extends timer_base_test;
+class timer_test extends base_test;
 
     apb3_configuration apb3_cfg;
     ral_timer rm;

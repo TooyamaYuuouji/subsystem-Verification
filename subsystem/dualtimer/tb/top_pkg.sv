@@ -6,17 +6,17 @@ import uvm_pkg::*;
 import apb3_package::*;
 
 `include "virtual_sequencer.sv"
-// timer
-`include "ral_timer.sv"
-`include "timer_start_seq.sv"
-`include "timer_clear_interrupt_seq.sv"
-`include "timer_stop_seq.sv"
+// dualtimer
+`include "ral_dualtimer.sv"
+`include "dualtimer_start_seq.sv"
+`include "dualtimer_clear_interrupt_seq.sv"
+`include "dualtimer_stop_seq.sv"
 
 `include "scoreboard.sv"
 `include "apb3_adapter.sv"
 `include "base_env.sv"
 
 `include "base_test.sv"
-`include "timer_test.sv"
+`include "dualtimer_test.sv"
 
 endpackage: top_pkg
