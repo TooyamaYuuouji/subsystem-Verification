@@ -1,0 +1,9 @@
+`ifndef AHBL_DEFINES_SVH
+`define AHBL_DEFINES_SVH
+
+
+`define AHBL_MAX_DATA_WIDTH 32
+`define AHBL_MAX_ADDR_WIDTH 16
+
+
+`endif // AHBL_DEFINES_SVH

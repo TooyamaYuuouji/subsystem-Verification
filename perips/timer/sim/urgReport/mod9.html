@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: cmsdk_apb_timer</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_cmsdk_apb_timer'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_cmsdk_apb_timer')">cmsdk_apb_timer</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s5 cl rt"> 55.68</td>
+<td class="s7 cl rt"><a href="mod9.html#Line" > 72.73</a></td>
+<td class="s6 cl rt"><a href="mod9.html#Cond" > 66.67</a></td>
+<td class="s1 cl rt"><a href="mod9.html#Toggle" > 19.19</a></td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"><a href="mod9.html#Branch" > 64.15</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/tooyama/Code/Project/APB3VIP-4-CMSDK/perips/timer/sim/../dut/cmsdk_apb_timer/verilog/cmsdk_apb_timer.v')">/home/tooyama/Code/Project/APB3VIP-4-CMSDK/perips/timer/sim/../dut/cmsdk_apb_timer/verilog/cmsdk_apb_timer.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod9.html#inst_tag_9"  onclick="showContent('inst_tag_9')">timer_tb.DUT</a></td>
+<td class="s5 cl rt"> 55.68</td>
+<td class="s7 cl rt"><a href="mod9.html#Line" > 72.73</a></td>
+<td class="s6 cl rt"><a href="mod9.html#Cond" > 66.67</a></td>
+<td class="s1 cl rt"><a href="mod9.html#Toggle" > 19.19</a></td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"><a href="mod9.html#Branch" > 64.15</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_cmsdk_apb_timer'>
+<hr>
+<a name="inst_tag_9"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_9" >timer_tb.DUT</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s5 cl rt"> 55.68</td>
+<td class="s7 cl rt"><a href="mod9.html#Line" > 72.73</a></td>
+<td class="s6 cl rt"><a href="mod9.html#Cond" > 66.67</a></td>
+<td class="s1 cl rt"><a href="mod9.html#Toggle" > 19.19</a></td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"><a href="mod9.html#Branch" > 64.15</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s5 cl rt"> 55.68</td>
+<td class="s7 cl rt"> 72.73</td>
+<td class="s6 cl rt"> 66.67</td>
+<td class="s1 cl rt"> 19.19</td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"> 64.15</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 91.67</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod5.html#inst_tag_5" >timer_tb</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_cmsdk_apb_timer'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod9.html" >cmsdk_apb_timer</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s7"><td class="lf">TOTAL</td><td></td><td>66</td><td>48</td><td>72.73</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>122</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>131</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>140</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s3"><td class="lf">ALWAYS</td><td>155</td><td>24</td><td>8</td><td>33.33</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>192</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>201</td><td>7</td><td>6</td><td>85.71</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>224</td><td>8</td><td>8</td><td>100.00</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>254</td><td>7</td><td>6</td><td>85.71</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>277</td><td>4</td><td>4</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+121                       begin
+122        1/1              if (~PRESETn)
+123        1/1                reg_ctrl &lt;= {4{1'b0}};
+124        1/1              else if (write_enable00)
+125        1/1                reg_ctrl &lt;= PWDATA[3:0];
+                        MISSING_ELSE
+126                       end
+127                     
+128                       // Current Value register
+129                       always @(posedge PCLK or negedge PRESETn)
+130                       begin
+131        1/1              if (~PRESETn)
+132        1/1                reg_curr_val &lt;= {32{1'b0}};
+133        1/1              else if (write_enable04 | dec_ctrl)
+134        1/1                reg_curr_val &lt;= nxt_curr_val;
+                        MISSING_ELSE
+135                       end
+136                     
+137                       // Reload Value register
+138                       always @(posedge PCLKG or negedge PRESETn)
+139                       begin
+140        1/1              if (~PRESETn)
+141        1/1                reg_reload_val &lt;= {32{1'b0}};
+142        1/1              else if (write_enable08)
+143        1/1                reg_reload_val &lt;= PWDATA[31:0];
+                        MISSING_ELSE
+144                       end
+145                     
+146                     // Read operation, partitioned into two parts to reduce gate counts
+147                     // and improve timing
+148                       assign pid3_value  = ARM_CMSDK_APB_TIMER_PID3;
+149                     
+150                       // lower 8 bits -registered. Current value register mux not done here
+151                       // because the value can change every cycle
+152                     always @(PADDR or reg_ctrl or reg_reload_val or reg_timer_int or
+153                        ECOREVNUM or pid3_value)
+154                       begin
+155        1/1             if (PADDR[11:4] == 8'h00) begin
+156        1/1               case (PADDR[3:2])
+157        1/1               2'h0: read_mux_byte0 =  {{4{1'b0}}, reg_ctrl};
+158        1/1               2'h1: read_mux_byte0 =   {8{1'b0}};
+159        1/1               2'h2: read_mux_byte0 =  reg_reload_val[7:0];
+160        1/1               2'h3: read_mux_byte0 =  {{7{1'b0}}, reg_timer_int};
+161        <font color = "red">0/1     ==>       default:  read_mux_byte0 =   {8{1'bx}}; // x propagation</font>
+162                          endcase
+163                        end
+164        1/1             else if (PADDR[11:6] == 6'h3F) begin
+165        <font color = "red">0/1     ==>       case  (PADDR[5:2])</font>
+166        <font color = "red">0/1     ==>         4'h0, 4'h1,4'h2,4'h3: read_mux_byte0 =   {8{1'b0}};</font>
+167                        // ID register - constant values
+168        <font color = "red">0/1     ==>         4'h4: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID4; // 0xFD0 : PID 4</font>
+169        <font color = "red">0/1     ==>         4'h5: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID5; // 0xFD4 : PID 5</font>
+170        <font color = "red">0/1     ==>         4'h6: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID6; // 0xFD8 : PID 6</font>
+171        <font color = "red">0/1     ==>         4'h7: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID7; // 0xFDC : PID 7</font>
+172        <font color = "red">0/1     ==>         4'h8: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID0; // 0xFE0 : PID 0  APB timer part number[7:0]</font>
+173        <font color = "red">0/1     ==>         4'h9: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID1; // 0xFE0 : PID 1 [7:4] jep106_id_3_0. [3:0] part number [11:8]</font>
+174        <font color = "red">0/1     ==>         4'hA: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID2; // 0xFE0 : PID 2 [7:4] revision, [3] jedec_used. [2:0] jep106_id_6_4</font>
+175        <font color = "red">0/1     ==>         4'hB: read_mux_byte0 = {ECOREVNUM[3:0],pid3_value[3:0]};</font>
+176                                                                            // 0xFE0 : PID 3 [7:4] ECO revision, [3:0] modification number
+177        <font color = "red">0/1     ==>         4'hC: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID0; // 0xFF0 : CID 0</font>
+178        <font color = "red">0/1     ==>         4'hD: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID1; // 0xFF4 : CID 1 PrimeCell class</font>
+179        <font color = "red">0/1     ==>         4'hE: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID2; // 0xFF8 : CID 2</font>
+180        <font color = "red">0/1     ==>         4'hF: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID3; // 0xFFC : CID 3</font>
+181        <font color = "red">0/1     ==>         default : read_mux_byte0 = {8{1'bx}}; // x propogation</font>
+182                           endcase
+183                         end
+184                         else begin
+185        1/1                 read_mux_byte0 =   {8{1'b0}};     //default read out value
+186                         end
+187                       end
+188                     
+189                       // Register read data
+190                       always @(posedge PCLKG or negedge PRESETn)
+191                       begin
+192        1/1              if (~PRESETn)
+193        1/1                read_mux_byte0_reg &lt;= {8{1'b0}};
+194        1/1              else if (read_enable)
+195        1/1                read_mux_byte0_reg &lt;= read_mux_byte0;
+                        MISSING_ELSE
+196                       end
+197                     
+198                       // Second level of read mux
+199                       always @(PADDR or read_mux_byte0_reg or reg_curr_val or reg_reload_val)
+200                       begin
+201        1/1            if (PADDR[11:4] == 8'h00) begin
+202        1/1              case (PADDR[3:2])
+203        1/1                2'b01:   read_mux_word = {reg_curr_val[31:0]};
+204        1/1                2'b10:   read_mux_word = {reg_reload_val[31:8],read_mux_byte0_reg};
+205        1/1                2'b00,2'b11:  read_mux_word = {{24{1'b0}} ,read_mux_byte0_reg};
+206        <font color = "red">0/1     ==>        default : read_mux_word = {32{1'bx}};</font>
+207                         endcase
+208                       end
+209                       else begin
+210        1/1              read_mux_word = {{24{1'b0}}  ,read_mux_byte0_reg};
+211                       end
+212                       end
+213                     
+214                       // Output read data to APB
+215                       assign PRDATA = (read_enable) ? read_mux_word : {32{1'b0}};
+216                       assign PREADY  = 1'b1; // Always ready
+217                       assign PSLVERR = 1'b0; // Always okay
+218                     
+219                       assign ext_in_enable = reg_ctrl[1] | reg_ctrl[2] | PSEL;
+220                     
+221                       // Synchronize input and delay for edge detection
+222                       always @(posedge PCLK or negedge PRESETn)
+223                       begin
+224        1/1              if (~PRESETn)
+225                           begin
+226        1/1                ext_in_sync1 &lt;= 1'b0;
+227        1/1                ext_in_sync2 &lt;= 1'b0;
+228        1/1                ext_in_delay &lt;= 1'b0;
+229                           end
+230        1/1              else if (ext_in_enable)
+231                           begin
+232        1/1                ext_in_sync1 &lt;= EXTIN;
+233        1/1                ext_in_sync2 &lt;= ext_in_sync1;
+234        1/1                ext_in_delay &lt;= ext_in_sync2;
+235                           end
+                        MISSING_ELSE
+236                       end
+237                     
+238                       // Edge detection
+239                       assign edge_detect = ext_in_sync2 &amp; (~ext_in_delay);
+240                     
+241                       // Clock selection
+242                       assign clk_ctrl    = reg_ctrl[2] ? edge_detect : 1'b1;
+243                     
+244                       // Enable selection
+245                       assign enable_ctrl = reg_ctrl[1] ? ext_in_sync2 : 1'b1;
+246                     
+247                       // Overall decrement control
+248                       assign dec_ctrl    = reg_ctrl[0] &amp; enable_ctrl &amp; clk_ctrl;
+249                     
+250                       // Decrement counter
+251                       always @(write_enable04 or PWDATA or dec_ctrl or reg_curr_val or
+252                       reg_reload_val)
+253                       begin
+254        1/1            if (write_enable04)
+255        <font color = "red">0/1     ==>      nxt_curr_val = PWDATA[31:0]; // Software write to timer</font>
+256        1/1            else if (dec_ctrl)
+257                         begin
+258        1/1              if (reg_curr_val == {32{1'b0}})
+259        1/1                nxt_curr_val = reg_reload_val; // Reload
+260                         else
+261        1/1                nxt_curr_val = reg_curr_val - 1'b1; // Decrement
+262                         end
+263                       else
+264        1/1              nxt_curr_val = reg_curr_val; // Unchanged
+265                       end
+266                     
+267                       // Interrupt generation
+268                       // Trigger an interrupt when decrement to 0 and interrupt enabled
+269                       // and hold it until clear by software
+270                       assign timer_int_set   = (dec_ctrl &amp; reg_ctrl[3] &amp; (reg_curr_val==32'h00000001));
+271                       assign timer_int_clear = write_enable0c &amp; PWDATA[0];
+272                       assign update_timer_int= timer_int_set | timer_int_clear;
+273                     
+274                       // Registering interrupt output
+275                       always @(posedge PCLK or negedge PRESETn)
+276                       begin
+277        1/1              if (~PRESETn)
+278        1/1                reg_timer_int &lt;= 1'b0;
+279        1/1              else if (update_timer_int)
+280        1/1                reg_timer_int &lt;= timer_int_set;
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod9.html" >cmsdk_apb_timer</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">Conditions</td><td>6</td><td>4</td><td>66.67</td></tr>
+<tr class="s6"><td class="lf">Logical</td><td>6</td><td>4</td><td>66.67</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       215
+ EXPRESSION (read_enable ? read_mux_word : ({32 {1'b0}}))
+             -----1-----
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       242
+ EXPRESSION (reg_ctrl[2] ? edge_detect : 1'b1)
+             -----1-----
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       245
+ EXPRESSION (reg_ctrl[1] ? ext_in_sync2 : 1'b1)
+             -----1-----
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod9.html" >cmsdk_apb_timer</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s5">
+<td>Totals</td>
+<td class="rt">40</td>
+<td class="rt">22</td>
+<td class="rt">55.00 </td>
+</tr><tr class="s1">
+<td>Total Bits</td>
+<td class="rt">516</td>
+<td class="rt">99</td>
+<td class="rt">19.19 </td>
+</tr><tr class="s2">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">258</td>
+<td class="rt">52</td>
+<td class="rt">20.16 </td>
+</tr><tr class="s1">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">258</td>
+<td class="rt">47</td>
+<td class="rt">18.22 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">14</td>
+<td class="rt">7</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s1">
+<td>Port Bits</td>
+<td class="rt">176</td>
+<td class="rt">33</td>
+<td class="rt">18.75 </td>
+</tr><tr class="s1">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">88</td>
+<td class="rt">17</td>
+<td class="rt">19.32 </td>
+</tr><tr class="s1">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">88</td>
+<td class="rt">16</td>
+<td class="rt">18.18 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Signals</td>
+<td class="rt">26</td>
+<td class="rt">15</td>
+<td class="rt">57.69 </td>
+</tr><tr class="s1">
+<td>Signal Bits</td>
+<td class="rt">340</td>
+<td class="rt">66</td>
+<td class="rt">19.41 </td>
+</tr><tr class="s2">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">170</td>
+<td class="rt">35</td>
+<td class="rt">20.59 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">170</td>
+<td class="rt">31</td>
+<td class="rt">18.24 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>PCLK</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PCLKG</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PRESETn</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PSEL</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PADDR[3:2]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PADDR[11:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PENABLE</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PWRITE</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PWDATA[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PWDATA[31:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>ECOREVNUM[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PRDATA[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PRDATA[2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PRDATA[3]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PRDATA[31:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PREADY</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSLVERR</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>EXTIN</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>TIMERINT</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>read_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>write_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>write_enable00</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>write_enable04</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>write_enable08</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>write_enable0c</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>read_mux_byte0[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>read_mux_byte0[7:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>read_mux_byte0_reg[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>read_mux_word[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>read_mux_word[2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>read_mux_word[3]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>read_mux_word[31:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>pid3_value[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>reg_ctrl[0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reg_ctrl[2:1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>reg_ctrl[3]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reg_curr_val[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reg_curr_val[31:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>reg_reload_val[0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>reg_reload_val[3:1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reg_reload_val[31:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>nxt_curr_val[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>nxt_curr_val[31:4]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ext_in_sync1</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ext_in_sync2</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ext_in_delay</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ext_in_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>dec_ctrl</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>clk_ctrl</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>enable_ctrl</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>edge_detect</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reg_timer_int</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>timer_int_clear</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>timer_int_set</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>update_timer_int</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod9.html" >cmsdk_apb_timer</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Branches</td>
+<td></td>
+<td class="rt">53</td>
+<td class="rt">34</td>
+<td class="rt">64.15 </td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">215</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td>TERNARY</td>
+<td class="rt">242</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td>TERNARY</td>
+<td class="rt">245</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">122</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">131</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">140</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s2">
+<td>IF</td>
+<td class="rt">155</td>
+<td class="rt">20</td>
+<td class="rt">5</td>
+<td class="rt">25.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">192</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s8">
+<td>IF</td>
+<td class="rt">201</td>
+<td class="rt">5</td>
+<td class="rt">4</td>
+<td class="rt">80.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">224</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s7">
+<td>IF</td>
+<td class="rt">254</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">277</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+215          assign PRDATA = (read_enable) ? read_mux_word : {32{1'b0}};
+                                           <font color = "green">-1-</font>  
+                                           <font color = "green">==></font>  
+                                           <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+242          assign clk_ctrl    = reg_ctrl[2] ? edge_detect : 1'b1;
+                                              <font color = "red">-1-</font>  
+                                              <font color = "red">==></font>  
+                                              <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+245          assign enable_ctrl = reg_ctrl[1] ? ext_in_sync2 : 1'b1;
+                                              <font color = "red">-1-</font>  
+                                              <font color = "red">==></font>  
+                                              <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+122            if (~PRESETn)
+               <font color = "green">-1-</font>  
+123              reg_ctrl <= {4{1'b0}};
+           <font color = "green">      ==></font>
+124            else if (write_enable00)
+                    <font color = "green">-2-</font>  
+125              reg_ctrl <= PWDATA[3:0];
+           <font color = "green">      ==></font>
+                 MISSING_ELSE
+           <font color = "green">      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+131            if (~PRESETn)
+               <font color = "green">-1-</font>  
+132              reg_curr_val <= {32{1'b0}};
+           <font color = "green">      ==></font>
+133            else if (write_enable04 | dec_ctrl)
+                    <font color = "green">-2-</font>  
+134              reg_curr_val <= nxt_curr_val;
+           <font color = "green">      ==></font>
+                 MISSING_ELSE
+           <font color = "green">      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+140            if (~PRESETn)
+               <font color = "green">-1-</font>  
+141              reg_reload_val <= {32{1'b0}};
+           <font color = "green">      ==></font>
+142            else if (write_enable08)
+                    <font color = "green">-2-</font>  
+143              reg_reload_val <= PWDATA[31:0];
+           <font color = "green">      ==></font>
+                 MISSING_ELSE
+           <font color = "green">      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+155           if (PADDR[11:4] == 8'h00) begin
+              <font color = "green">-1-</font>  
+156             case (PADDR[3:2])
+                <font color = "red">-2-</font>  
+157             2'h0: read_mux_byte0 =  {{4{1'b0}}, reg_ctrl};
+           <font color = "green">     ==></font>
+158             2'h1: read_mux_byte0 =   {8{1'b0}};
+           <font color = "green">     ==></font>
+159             2'h2: read_mux_byte0 =  reg_reload_val[7:0];
+           <font color = "green">     ==></font>
+160             2'h3: read_mux_byte0 =  {{7{1'b0}}, reg_timer_int};
+           <font color = "green">     ==></font>
+161             default:  read_mux_byte0 =   {8{1'bx}}; // x propagation
+           <font color = "red">     ==></font>
+162             endcase
+163           end
+164           else if (PADDR[11:6] == 6'h3F) begin
+                   <font color = "red">-3-</font>  
+165             case  (PADDR[5:2])
+                <font color = "red">-4-</font>  
+166               4'h0, 4'h1,4'h2,4'h3: read_mux_byte0 =   {8{1'b0}};
+           <font color = "red">       ==></font>
+167           // ID register - constant values
+168               4'h4: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID4; // 0xFD0 : PID 4
+           <font color = "red">       ==></font>
+169               4'h5: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID5; // 0xFD4 : PID 5
+           <font color = "red">       ==></font>
+170               4'h6: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID6; // 0xFD8 : PID 6
+           <font color = "red">       ==></font>
+171               4'h7: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID7; // 0xFDC : PID 7
+           <font color = "red">       ==></font>
+172               4'h8: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID0; // 0xFE0 : PID 0  APB timer part number[7:0]
+           <font color = "red">       ==></font>
+173               4'h9: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID1; // 0xFE0 : PID 1 [7:4] jep106_id_3_0. [3:0] part number [11:8]
+           <font color = "red">       ==></font>
+174               4'hA: read_mux_byte0 = ARM_CMSDK_APB_TIMER_PID2; // 0xFE0 : PID 2 [7:4] revision, [3] jedec_used. [2:0] jep106_id_6_4
+           <font color = "red">       ==></font>
+175               4'hB: read_mux_byte0 = {ECOREVNUM[3:0],pid3_value[3:0]};
+           <font color = "red">       ==></font>
+176                                                               // 0xFE0 : PID 3 [7:4] ECO revision, [3:0] modification number
+177               4'hC: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID0; // 0xFF0 : CID 0
+           <font color = "red">       ==></font>
+178               4'hD: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID1; // 0xFF4 : CID 1 PrimeCell class
+           <font color = "red">       ==></font>
+179               4'hE: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID2; // 0xFF8 : CID 2
+           <font color = "red">       ==></font>
+180               4'hF: read_mux_byte0 = ARM_CMSDK_APB_TIMER_CID3; // 0xFFC : CID 3
+           <font color = "red">       ==></font>
+181               default : read_mux_byte0 = {8{1'bx}}; // x propogation
+           <font color = "red">       ==></font>
+182              endcase
+183            end
+184            else begin
+185               read_mux_byte0 =   {8{1'b0}};     //default read out value
+           <font color = "green">       ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>2'h0 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>2'h1 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>2'h2 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>2'h3 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'b0 4'b1 4'h2 4'h3 </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'h4 </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'h5 </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'h6 </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'h7 </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'h8 </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'h9 </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'ha </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'hb </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'hc </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'hd </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'he </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>4'hf </td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>default</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+192            if (~PRESETn)
+               <font color = "green">-1-</font>  
+193              read_mux_byte0_reg <= {8{1'b0}};
+           <font color = "green">      ==></font>
+194            else if (read_enable)
+                    <font color = "green">-2-</font>  
+195              read_mux_byte0_reg <= read_mux_byte0;
+           <font color = "green">      ==></font>
+                 MISSING_ELSE
+           <font color = "green">      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+201          if (PADDR[11:4] == 8'h00) begin
+             <font color = "green">-1-</font>  
+202            case (PADDR[3:2])
+               <font color = "red">-2-</font>  
+203              2'b01:   read_mux_word = {reg_curr_val[31:0]};
+           <font color = "green">      ==></font>
+204              2'b10:   read_mux_word = {reg_reload_val[31:8],read_mux_byte0_reg};
+           <font color = "green">      ==></font>
+205              2'b00,2'b11:  read_mux_word = {{24{1'b0}} ,read_mux_byte0_reg};
+           <font color = "green">      ==></font>
+206              default : read_mux_word = {32{1'bx}};
+           <font color = "red">      ==></font>
+207            endcase
+208          end
+209          else begin
+210            read_mux_word = {{24{1'b0}}  ,read_mux_byte0_reg};
+           <font color = "green">    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>2'b01 </td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>2'b10 </td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>2'b0 2'b11 </td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>default</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+224            if (~PRESETn)
+               <font color = "green">-1-</font>  
+225              begin
+226              ext_in_sync1 <= 1'b0;
+           <font color = "green">      ==></font>
+227              ext_in_sync2 <= 1'b0;
+228              ext_in_delay <= 1'b0;
+229              end
+230            else if (ext_in_enable)
+                    <font color = "green">-2-</font>  
+231              begin
+232              ext_in_sync1 <= EXTIN;
+           <font color = "green">      ==></font>
+233              ext_in_sync2 <= ext_in_sync1;
+234              ext_in_delay <= ext_in_sync2;
+235              end
+                 MISSING_ELSE
+           <font color = "green">      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+254          if (write_enable04)
+             <font color = "red">-1-</font>  
+255            nxt_curr_val = PWDATA[31:0]; // Software write to timer
+           <font color = "red">    ==></font>
+256          else if (dec_ctrl)
+                  <font color = "green">-2-</font>  
+257            begin
+258            if (reg_curr_val == {32{1'b0}})
+               <font color = "green">-3-</font>  
+259              nxt_curr_val = reg_reload_val; // Reload
+           <font color = "green">      ==></font>
+260            else
+261              nxt_curr_val = reg_curr_val - 1'b1; // Decrement
+           <font color = "green">      ==></font>
+262            end
+263          else
+264            nxt_curr_val = reg_curr_val; // Unchanged
+           <font color = "green">    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+277            if (~PRESETn)
+               <font color = "green">-1-</font>  
+278              reg_timer_int <= 1'b0;
+           <font color = "green">      ==></font>
+279            else if (update_timer_int)
+                    <font color = "green">-2-</font>  
+280              reg_timer_int <= timer_int_set;
+           <font color = "green">      ==></font>
+                 MISSING_ELSE
+           <font color = "green">      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_9">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_cmsdk_apb_timer">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

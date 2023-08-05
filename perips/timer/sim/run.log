@@ -1,0 +1,91 @@
+Command: /home/tooyama/Code/Project/APB3VIP-4-CMSDK/perips/timer/sim/./timer_tb.simv -sml +UVM_TESTNAME=timer_test +UVM_VERBOSITY=UVM_LOW +ntb_random_seed=5 -l run.log -cm line+cond+fsm+tgl+branch+assert -covg_cont_on_error -cm_dir out.vdb -cm_name timer_test_5
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Aug  4 21:58 2023
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test timer_test...
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean config|dut_vif
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean config|dut_vif
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean config|dut_vif
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean config|dut_vif
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean config|dut_vif
+UVM_INFO ../test/timer_test.sv(92) @ 190000: uvm_test_top [DEBUG] backdoor, VALUE = 0000000d
+UVM_INFO ../env/scoreboard.sv(59) @ 530000: uvm_test_top.env.sb [DEBUG] in sb, res_counter =          14
+UVM_INFO ../env/scoreboard.sv(61) @ 530000: uvm_test_top.env.sb [CUPSUC] Compare pass!
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(589) @ 730000: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               timer_test              -     @346 
+  env                      base_env                -     @359 
+    agent                  apb3_master_agent       -     @572 
+      driver               apb3_master_driver      -     @586 
+        rsp_port           uvm_analysis_port       -     @605 
+        seq_item_port      uvm_seq_item_pull_port  -     @595 
+      monitor              apb3_master_monitor     -     @615 
+        ap                 uvm_analysis_port       -     @624 
+      sequencer            apb3_master_sequencer   -     @634 
+        rsp_export         uvm_analysis_export     -     @643 
+        seq_item_export    uvm_seq_item_pull_imp   -     @761 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    sb                     scoreboard              -     @553 
+      mon_imp              uvm_analysis_imp        -     @562 
+    vsqr                   virtual_sequencer       -     @416 
+      rsp_export           uvm_analysis_export     -     @425 
+      seq_item_export      uvm_seq_item_pull_imp   -     @543 
+      arbitration_queue    array                   0     -    
+      lock_queue           array                   0     -    
+      num_last_reqs        integral                32    'd1  
+      num_last_rsps        integral                32    'd1  
+--------------------------------------------------------------
+
+UVM_INFO /home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_report_server.svh(894) @ 730000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   11
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CUPSUC]     1
+[DEBUG]     2
+[RNTST]     1
+[UVM/CONFIGDB/SPELLCHK]     5
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+
+$finish called from file "/home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time               730000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 730000 ps
+CPU Time:      1.780 seconds;       Data structure size:   0.5Mb
+Fri Aug  4 21:58:05 2023

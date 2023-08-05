@@ -1,0 +1,28 @@
+Dashboard
+
+Date: Fri Aug  4 21:58:10 2023
+
+User: tooyama
+
+Version: O-2018.09-SP2
+Command line: urg -dir out.vdb -format both
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH ASSERT 
+ 36.50  18.37  66.67  17.51 --      43.43 --     
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH ASSERT NAME                               
+ 56.98  79.31  66.67  17.78 --      64.15 --     timer_tb                           
+  8.26   5.21 --       0.00 --      19.57 --     uvm_custom_install_verdi_recording 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH ASSERT 
+ 35.86  18.37  66.67  17.51 --      43.43  33.33 
+

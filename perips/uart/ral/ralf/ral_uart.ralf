@@ -1,0 +1,122 @@
+register DATA {
+    bytes 2;
+
+    field RTDATA hdl_path=(reg_tx_buf) {
+        bits 8;
+        reset 8'hxx
+        access rw;
+    }
+}
+
+register STATE {
+    bytes 1;
+    left_to_right;
+
+    field RX_OVERRUN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field TX_OVERRUN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field RX_FULL {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field TX_FULL {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+}
+
+register CTRL {
+    bytes 1;
+    left_to_right;
+
+    field HIGH_SPEED {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field RX_OR_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field TX_OR_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field RX_INT_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field TX_INT_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field RX_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field TX_EN {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+}
+
+register INTCLEAR {
+    bytes 1;
+    left_to_right;
+
+    field RX_OR_INT {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field TX_OR_INT {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field RX_INT {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+    field TX_INT {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+}
+
+register BAUDDIV {
+    bytes 4;
+    
+    field BAUD {
+        bits 20;
+        reset 1'b0;
+        access rw;
+    }
+}
+
+block ral_uart {
+    bytes 20;
+    
+    register DATA @'h000;
+    register STATE @'h004;
+    register CTRL @'h008;
+    register INTCLEAR @'h00C;
+    register BAUDDIV @'h010;
+}
