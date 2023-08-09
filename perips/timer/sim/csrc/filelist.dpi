@@ -1,4 +1,0 @@
-DPI_STUB_OBJS += ./../timer_tb.simv.daidir/vc_hdrs.o
-./../timer_tb.simv.daidir/vc_hdrs.o: ./../timer_tb.simv.daidir/vc_hdrs.c
-	@$(CC) -I/home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/include  -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC    -I/home/tooyama/EDA/Synopsys/vcs/vcs/O-2018.09-SP2/include  -fPIC -c -o ./../timer_tb.simv.daidir/vc_hdrs.o ./../timer_tb.simv.daidir/vc_hdrs.c
-	@strip -g ./../timer_tb.simv.daidir/vc_hdrs.o

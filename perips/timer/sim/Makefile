@@ -39,6 +39,6 @@ dve:
 	$(DVE)
 
 clean:
-	rm -rf *.log *.log.* *.h *.key *.vpd
-	rm -rf csrc *.simv* DVE* stack.info* *.vdb urgReport
+	rm -rf *.log *.log.* *.h *.key *.vpd novas.*
+	rm -rf csrc *.simv* DVE* stack.info* *.vdb urgReport verdiLog
 	rm -rf .inter.vpd.uvm .restartSimSession.tcl.old
