@@ -13,7 +13,7 @@ dut_interface dut_if(.PCLK(clk), .PRESETn(rstn));
 
 cmsdk_apb_uart DUT(
     .PCLK(apb3_if.PCLK),
-    .PCLKG(apb3_if.PCLKG),
+    .PCLKG(apb3_if.PCLK),
     .PRESETn(apb3_if.PRESETn),
     .PSEL(apb3_if.PSEL),
     .PADDR(apb3_if.PADDR[11:2]),

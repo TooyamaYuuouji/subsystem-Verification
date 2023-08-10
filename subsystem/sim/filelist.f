@@ -21,13 +21,13 @@
 +incdir+../../perips/uart/dut/cmsdk_apb_uart/verilog
 ../../perips/uart/dut/cmsdk_apb_uart/verilog/cmsdk_apb_uart.v
 // mux
-+incidr+../dut/cmsdk_apb_slave_mux/verilog
++incdir+../dut/cmsdk_apb_slave_mux/verilog
 ../dut/cmsdk_apb_slave_mux/verilog/cmsdk_apb_slave_mux.v
 // bridge
-+incidr+../dut/cmsdk_ahb_to_apb/verilog
++incdir+../dut/cmsdk_ahb_to_apb/verilog
 ../dut/cmsdk_ahb_to_apb/verilog/cmsdk_ahb_to_apb.v
 // subsystem
-+incidr+../dut/cmsdk_apb_subsystem/verilog
++incdir+../dut/cmsdk_apb_subsystem/verilog
 ../dut/cmsdk_apb_subsystem/verilog/cmsdk_apb_test_slave.v
 ../dut/cmsdk_apb_subsystem/verilog/cmsdk_irq_sync.v
 ../dut/cmsdk_apb_subsystem/verilog/cmsdk_apb_subsystem.v
@@ -48,10 +48,16 @@
 ../vip/ahbl/ahbl_pkg.sv
 
 /**************************************************
-* sequence, env, test*
+* common, sequence, env, test *
 **************************************************/
-//+incdir+../seq
++incdir+../common
+../common/perips_interface.sv
+../common/system_interface.sv
+
++incdir+../seq
+
 +incdir+../env
+
 +incdir+../test
 
 /**************************************************

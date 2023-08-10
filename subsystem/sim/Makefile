@@ -1,7 +1,7 @@
 
 FILELIST = filelist.f
 TB = top_tb
-TESTNAME = base_test
+TESTNAME = timer0_test
 VERB = UVM_LOW
 SEED = 5
 VDB = out.vdb
