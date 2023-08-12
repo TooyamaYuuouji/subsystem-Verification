@@ -30,7 +30,7 @@ task timer1_test::main_phase(uvm_phase phase);
     seq = timer1_seq::type_id::create("seq");
     phase.raise_objection(this);
 
-    seq.start(env.ahbl_mst_agt.sequencer);
+    seq.start(virt_sqr);
     #500ns;
     sys_vif.report_int();
 

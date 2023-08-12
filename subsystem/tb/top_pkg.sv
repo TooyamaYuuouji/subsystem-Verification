@@ -5,6 +5,8 @@ package top_pkg;
 import uvm_pkg::*;
 import ahbl_pkg::*;
 
+`include "virtual_sequencer.sv"
+
 `include "base_seq.sv"
 `include "test_slave_seq.sv"
 `include "timer0_seq.sv"

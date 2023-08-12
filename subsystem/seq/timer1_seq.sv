@@ -2,6 +2,7 @@
 class timer1_seq extends base_seq;
 
     `uvm_object_utils(timer1_seq)
+    `uvm_declare_p_sequencer(virtual_sequencer)
 
     extern function new(string name="timer1_seq");
     extern virtual task body();
@@ -16,8 +17,9 @@ function timer1_seq::new(string name="timer1_seq");
 endfunction: new
 
 task timer1_seq::body();
+`uvm_info("DEBUG", $sformatf("Can read virtual_sequencer value. test_in_vsqr=%d", p_sequencer.test_in_vsqr), UVM_LOW)
     // set value
-    `uvm_do_with(ahbl_tr, {
+    `uvm_do_on_with(ahbl_tr, p_sequencer.ahbl_mst_sqr, {
         hsel == 1'b1;
         hwrite == 1'b1;
         addr == 16'h1000 + 16'h0008;
@@ -28,7 +30,7 @@ task timer1_seq::body();
     })
     // start
     #200ns;
-    `uvm_do_with(ahbl_tr, {
+    `uvm_do_on_with(ahbl_tr, p_sequencer.ahbl_mst_sqr, {
         hsel == 1'b1;
         hwrite == 1'b1;
         addr == 16'h1000 + 16'h0000;
