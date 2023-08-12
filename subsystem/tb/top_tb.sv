@@ -27,6 +27,7 @@ assign pclk = ahbl_if.HCLK;
 assign pclkg = ahbl_if.HCLK;
 assign pclken = 1'b1;
 assign presetn = ahbl_if.HRESETn;
+assign sys_if.timer0_extin = clk2;
 
 cmsdk_apb_subsystem #(
   .APB_EXT_PORT12_ENABLE(0),
