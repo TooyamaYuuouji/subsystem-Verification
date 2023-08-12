@@ -13,6 +13,8 @@ import ahbl_pkg::*;
 `include "timer1_seq.sv"
 `include "dualtimer_seq.sv"
 `include "uart0_seq.sv"
+`include "uart1_seq.sv"
+`include "uart2_seq.sv"
 
 `include "base_env.sv"
 
@@ -22,5 +24,7 @@ import ahbl_pkg::*;
 `include "timer1_test.sv"
 `include "dualtimer_test.sv"
 `include "uart0_test.sv"
+`include "uart1_test.sv"
+`include "uart2_test.sv"
 
 endpackage: top_pkg

@@ -1,7 +1,7 @@
 
 FILELIST = filelist.f
 TB = top_tb
-TESTNAME = uart0_test
+TESTNAME = uart2_test
 VERB = UVM_LOW
 SEED = 5
 VDB = out.vdb
