@@ -17,7 +17,6 @@ function uart1_seq::new(string name="uart1_seq");
 endfunction: new
 
 task uart1_seq::body();
-`uvm_info("DEBUG", $sformatf("Can read virtual_sequencer value. test_in_vsqr=%d", p_sequencer.test_in_vsqr), UVM_LOW)
     // set baud
     `uvm_do_on_with(ahbl_tr, p_sequencer.ahbl_mst_sqr, {
         hsel == 1'b1;

@@ -30,8 +30,7 @@ task test_slave_test::main_phase(uvm_phase phase);
     seq = test_slave_seq::type_id::create("seq");
     phase.raise_objection(this);
 
-    seq.start(env.ahbl_mst_agt.sequencer);
-    #500ns;
+    seq.start(virt_sqr);
 
     phase.drop_objection(this);
 endtask: main_phase

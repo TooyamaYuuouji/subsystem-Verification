@@ -4,7 +4,7 @@ class virtual_sequencer extends uvm_sequencer;
     `uvm_component_utils(virtual_sequencer)
 
     ahbl_mst_sequencer ahbl_mst_sqr;
-    int test_in_vsqr = 21;
+    virtual system_interface sys_vif;
 
     extern function new(string name="virtual_sequencer", uvm_component parent=null);
     extern function void build_phase(uvm_phase phase);
@@ -20,4 +20,8 @@ endfunction: new
 
 function void virtual_sequencer::build_phase(uvm_phase phase);
     super.build_phase(phase);
+
+    if(!uvm_config_db #(virtual system_interface)::get(this, "", "sys_vif", sys_vif)) begin
+        `uvm_fatal("GETCFG", "cannot get sys_if from config DB")
+    end
 endfunction: build_phase

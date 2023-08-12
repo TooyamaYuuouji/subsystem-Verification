@@ -38,7 +38,7 @@ function void base_test::build_phase(uvm_phase phase);
         `uvm_fatal("GETCFG", "cannot get sys_if from config DB")
     end
     uvm_config_db #(virtual ahbl_interface)::set(this, "env.ahbl_mst_agt", "vif", ahbl_vif);
-
+    uvm_config_db #(virtual system_interface)::set(this, "virt_sqr", "sys_vif", sys_vif);
     // virt_sqr.ahbl_mst_sqr = env.ahbl_mst_agt.sequencer;
 endfunction: build_phase
 

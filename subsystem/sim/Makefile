@@ -2,7 +2,7 @@
 # variable
 FILELIST = filelist.f
 TB = top_tb
-TESTNAME = uart2_test
+TESTNAME = test_slave_test
 VERB = UVM_LOW
 SEED = 5
 VDB = out.vdb
