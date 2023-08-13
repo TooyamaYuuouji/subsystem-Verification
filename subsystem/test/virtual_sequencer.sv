@@ -5,7 +5,6 @@ class virtual_sequencer extends uvm_sequencer;
 
     ahbl_mst_sequencer ahbl_mst_sqr;
     virtual system_interface sys_vif;
-    int test_for_timer0_seq = 500;
 
     extern function new(string name="virtual_sequencer", uvm_component parent=null);
     extern function void build_phase(uvm_phase phase);

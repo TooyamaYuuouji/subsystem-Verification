@@ -6,7 +6,7 @@ import uvm_pkg::*;
 import ahbl_pkg::*;
 
 logic clk, rstn;
-logic clk2;
+logic clk2, clk3;
 
 logic pclk;
 logic pclkg;
@@ -15,7 +15,6 @@ logic presetn;
 logic apbactive;
 
 ahbl_interface ahbl_if(.HCLK(clk), .HRESETn(rstn));
-// apb3_interface apb3_if(.PCLK(clk2), .PRESETn(rstn));
 system_interface sys_if();
 perips_interface perips12_if(.pclk(ahbl_if.HCLK), .presetn(ahbl_if.HRESETn));
 perips_interface perips13_if(.pclk(ahbl_if.HCLK), .presetn(ahbl_if.HRESETn));
@@ -28,6 +27,7 @@ assign pclkg = ahbl_if.HCLK;
 assign pclken = 1'b1;
 assign presetn = ahbl_if.HRESETn;
 assign sys_if.timer0_extin = clk2;
+assign sys_if.timer1_extin = clk3;
 
 cmsdk_apb_subsystem #(
   .APB_EXT_PORT12_ENABLE(0),
@@ -103,6 +103,7 @@ cmsdk_apb_subsystem #(
 initial begin: initialization
     clk = 0;
     clk2 = 0;
+    clk3 = 0;
     rstn = 0;
 end
 
@@ -117,6 +118,13 @@ initial begin: clk2_gen
     forever begin
         #20;
         clk2 <= ~clk2;
+    end
+end
+
+initial begin: clk3_gen
+    forever begin
+        #30;
+        clk3 <= ~clk3;
     end
 end
 

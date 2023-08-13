@@ -25,15 +25,19 @@ function void timer0_test::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task timer0_test::main_phase(uvm_phase phase);
-    timer0_internal_clock_seq seq;
+    timer0_internal_clock_seq seq_in;
+    timer0_external_clock_seq seq_ex;
+    timer0_external_enable_seq seq_exen;
 
-    seq = timer0_internal_clock_seq::type_id::create("seq");
+    seq_in = timer0_internal_clock_seq::type_id::create("seq_in");
+    seq_ex = timer0_external_clock_seq::type_id::create("seq_ex");
+    seq_exen = timer0_external_enable_seq::type_id::create("seq_exen");
     phase.raise_objection(this);
-
-    seq.start(virt_sqr);
+    seq_in.start(virt_sqr);
     #500ns;
-    sys_vif.report_int();
-
+    seq_ex.start(virt_sqr);
+    #500ns;
+    seq_exen.start(virt_sqr);
     phase.drop_objection(this);
 endtask: main_phase
 
