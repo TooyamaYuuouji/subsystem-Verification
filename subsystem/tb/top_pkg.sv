@@ -7,6 +7,7 @@ import ahbl_pkg::*;
 `include "dut_defines.svh"
 
 
+`include "func_cov.sv"
 `include "virtual_sequencer.sv"
 
 `include "base_seq.sv"
@@ -23,6 +24,7 @@ import ahbl_pkg::*;
 `include "uart1_seq.sv"
 `include "uart2_seq.sv"
 
+`include "scoreboard.sv"
 `include "base_env.sv"
 
 `include "base_test.sv"

@@ -54,6 +54,8 @@
 ../common/perips_interface.sv
 ../common/system_interface.sv
 
++incdir+../cov
+
 +incdir+../seq
 
 +incdir+../env

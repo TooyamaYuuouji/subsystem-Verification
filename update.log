@@ -86,6 +86,9 @@ virtual sequencer增加interface变量供sequence使用。sequence分层并嵌�
 # 2.11v
 完善和timer1有关的sequence以及test
 
+# 2.12v
+加入scoreboard，加入和timer0、timer1有关的功能验证断言
+
 ## timer验证要点
 内部寄存器的读写由PCLKG上升沿控制，而不是PCLK，这一点尤其要注意
 PCLK应该由更上一级时钟生成，且上级时钟是双端时钟，方便PCLKG进行参考（PSEL和PENABLE可以上升沿触发，但与此同时的PCLKG必须在紧接着的一个时钟下降沿从零置一）

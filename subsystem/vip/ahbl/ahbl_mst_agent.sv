@@ -21,7 +21,7 @@ class ahbl_mst_agent extends uvm_agent;
 	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 
-		ap = new("ap", this);
+		// ap = new("ap", this);
 
 		if(!uvm_config_db #(ahbl_agent_configuration)::get(this, "", "cfg", cfg))
 			`uvm_fatal("GETCFG", "cannot get cfg from config DB")
@@ -45,6 +45,8 @@ class ahbl_mst_agent extends uvm_agent;
 		if(cfg.is_active) begin
 			driver.seq_item_port.connect(sequencer.seq_item_export);
 		end
+
+		ap = monitor.ap;
 	endfunction : connect_phase
 
 endclass : ahbl_mst_agent
