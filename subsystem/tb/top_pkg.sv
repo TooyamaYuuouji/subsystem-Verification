@@ -12,6 +12,7 @@ import ahbl_pkg::*;
 `include "base_seq.sv"
 `include "ahbl_single_w32_seq.sv"
 `include "test_slave_seq.sv"
+`include "timer0_internal_clock_seq.sv"
 `include "timer0_seq.sv"
 `include "timer1_seq.sv"
 `include "dualtimer_seq.sv"

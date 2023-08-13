@@ -25,12 +25,12 @@ function void timer0_test::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task timer0_test::main_phase(uvm_phase phase);
-    timer0_seq seq;
+    timer0_internal_clock_seq seq;
 
-    seq = timer0_seq::type_id::create("seq");
+    seq = timer0_internal_clock_seq::type_id::create("seq");
     phase.raise_objection(this);
 
-    seq.start(env.ahbl_mst_agt.sequencer);
+    seq.start(virt_sqr);
     #500ns;
     sys_vif.report_int();
 

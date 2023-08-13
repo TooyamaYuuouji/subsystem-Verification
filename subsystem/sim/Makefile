@@ -2,7 +2,7 @@
 # variable
 FILELIST = filelist.f
 TB = top_tb
-TESTNAME = test_slave_test
+TESTNAME = timer0_test
 VERB = UVM_LOW
 SEED = 5
 VDB = out.vdb
