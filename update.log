@@ -89,9 +89,15 @@ virtual sequencer增加interface变量供sequence使用。sequence分层并嵌�
 # 2.12v
 加入scoreboard，加入和timer0、timer1有关的功能验证断言
 
+# 2.13v
+完善和dualtimer有关的sequence以及test
+
 ## timer验证要点
 内部寄存器的读写由PCLKG上升沿控制，而不是PCLK，这一点尤其要注意
 PCLK应该由更上一级时钟生成，且上级时钟是双端时钟，方便PCLKG进行参考（PSEL和PENABLE可以上升沿触发，但与此同时的PCLKG必须在紧接着的一个时钟下降沿从零置一）
+
+## dualtimer验证要点
+TimerPre中的11模式——UNDEFINED，不是指不使用分频系数，相反，如果配置了该模式，很可能是随机给一个分频系数（未验证该猜想）
 
 ## uart验证要点
 - tx时，地址必须保持不变，其他APB上的数据可以变化。直到tx发送完成后才能改变地址。- 

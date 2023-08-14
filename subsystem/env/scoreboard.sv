@@ -23,5 +23,6 @@ endfunction: new
 
 function void scoreboard::write(ahbl_transaction ahbl_tr);
     // ahbl_tr.print();
-    fcov.timer0_cg.sample(ahbl_tr);
+    // fcov.timer0_cg.sample(ahbl_tr);
+    fcov.cg_sample(ahbl_tr);
 endfunction: write
