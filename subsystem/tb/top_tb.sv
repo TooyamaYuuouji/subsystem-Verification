@@ -15,7 +15,7 @@ logic presetn;
 logic apbactive;
 
 ahbl_interface ahbl_if(.HCLK(clk), .HRESETn(rstn));
-system_interface sys_if();
+system_interface sys_if(.sys_clk(clk), .sys_rstn(rstn));
 perips_interface perips12_if(.pclk(ahbl_if.HCLK), .presetn(ahbl_if.HRESETn));
 perips_interface perips13_if(.pclk(ahbl_if.HCLK), .presetn(ahbl_if.HRESETn));
 perips_interface perips14_if(.pclk(ahbl_if.HCLK), .presetn(ahbl_if.HRESETn));

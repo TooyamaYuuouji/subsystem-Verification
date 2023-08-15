@@ -92,6 +92,9 @@ virtual sequencer增加interface变量供sequence使用。sequence分层并嵌�
 # 2.13v
 完善和dualtimer有关的sequence以及test
 
+# 2.14v
+完善和uart有关的sequence以及test
+
 ## timer验证要点
 内部寄存器的读写由PCLKG上升沿控制，而不是PCLK，这一点尤其要注意
 PCLK应该由更上一级时钟生成，且上级时钟是双端时钟，方便PCLKG进行参考（PSEL和PENABLE可以上升沿触发，但与此同时的PCLKG必须在紧接着的一个时钟下降沿从零置一）
@@ -104,6 +107,8 @@ TimerPre中的11模式——UNDEFINED，不是指不使用分频系数，相反�
 发生中断时，必须及时清空中断，否则该uart不会顺利发生数据。
 在tx发送过程中，可以向uart写入下一次想要发送的数据，但该tx过程不会被打断，而是等待上一次的数据发送完成后再给出中断然后开始发送新数据。
 最后一次数据的发送不会产生中断，换句话说，单次tx不产生发送完成中断，只在准备发送时产生中断
+- tx的overrun中断产生时，似乎会以最后一次传输的数据作为tx发送的数据
+- rx的overrun中断触发条件：传输了一次数据之后不进行读取操作，下一次数据传输完成后就会产生overrun中断
 
 ## pclkg
 可以直接等于pclk。当然，按照规定，应该是使用pclk和apbactive生成pclkg，实现低功耗

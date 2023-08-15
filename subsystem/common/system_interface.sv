@@ -1,4 +1,4 @@
-interface system_interface();
+interface system_interface(input bit sys_clk, input bit sys_rstn);
 
     logic uart0_rxd;
     logic uart0_txd;
@@ -16,7 +16,7 @@ interface system_interface();
     logic watchdog_reset;
 
     /**************************************************
-    * report current interrupts situation
+    * function and task
     **************************************************/
     function void report_int();
         string str = "";
@@ -36,5 +36,35 @@ interface system_interface();
 
         $display(str);
     endfunction: report_int
+
+    task simulate_rx(input int clk_count);
+        logic[7:0] rx_value;
+        int index;
+
+        index = 8;
+        void'(std::randomize(rx_value));
+        $display({"[DEBUG]", $sformatf("in system_interface, %t generating rx_value=%b", $realtime, rx_value)});
+        uart0_rxd <= 0;
+        uart1_rxd <= 0;
+        uart2_rxd <= 0;
+        repeat(clk_count) begin
+            @(posedge sys_clk);
+        end
+        while(index) begin
+            index --;
+            uart0_rxd <= rx_value[7-index];
+            uart1_rxd <= rx_value[7-index];
+            uart2_rxd <= rx_value[7-index];
+            repeat(clk_count) begin
+                @(posedge sys_clk);
+            end
+        end
+        uart0_rxd <= 1;
+        uart1_rxd <= 1;
+        uart2_rxd <= 1;
+        repeat(clk_count) begin
+            @(posedge sys_clk);
+        end
+    endtask: simulate_rx
 
 endinterface: system_interface

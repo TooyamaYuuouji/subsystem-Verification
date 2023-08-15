@@ -25,15 +25,31 @@ function void uart1_test::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task uart1_test::main_phase(uvm_phase phase);
-    uart1_seq seq;
+    // uart1_single_tx_seq uart1_stx_seq;
+    // uart1_continue_tx_seq uart1_contx_seq;
 
-    seq = uart1_seq::type_id::create("seq");
+    // uart1_stx_seq = uart1_single_tx_seq::type_id::create("uart1_stx_seq");
+    // uart1_contx_seq = uart1_continue_tx_seq::type_id::create("uart1_contx_seq");
+    // phase.raise_objection(this);
+
+    // uart1_stx_seq.start(virt_sqr);
+    // uart1_contx_seq.start(virt_sqr);
+
+    // #1us;
+
+    // phase.drop_objection(this);
+
+    uart1_single_rx_seq uart1_srx_seq;
+    uart1_continue_rx_seq uart1_conrx_seq;
+
+    uart1_srx_seq = uart1_single_rx_seq::type_id::create("uart1_srx_seq");
+    uart1_conrx_seq = uart1_continue_rx_seq::type_id::create("uart1_conrx_seq");
     phase.raise_objection(this);
 
-    seq.start(virt_sqr);
-    sys_vif.report_int();
+    uart1_srx_seq.start(virt_sqr);
+    uart1_conrx_seq.start(virt_sqr);
 
-    #100ns;
+    #1us;
 
     phase.drop_objection(this);
 endtask: main_phase

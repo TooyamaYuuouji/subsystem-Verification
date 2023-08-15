@@ -25,15 +25,23 @@ function void uart2_test::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task uart2_test::main_phase(uvm_phase phase);
-    uart2_seq seq;
+    uart2_single_tx_seq uart2_stx_seq;
+    uart2_continue_tx_seq uart2_contx_seq;
+    uart2_single_rx_seq uart2_srx_seq;
+    uart2_continue_rx_seq uart2_conrx_seq;
 
-    seq = uart2_seq::type_id::create("seq");
+    uart2_stx_seq = uart2_single_tx_seq::type_id::create("uart2_stx_seq");
+    uart2_contx_seq = uart2_continue_tx_seq::type_id::create("uart2_contx_seq");
+    uart2_srx_seq = uart2_single_rx_seq::type_id::create("uart2_srx_seq");
+    uart2_conrx_seq = uart2_continue_rx_seq::type_id::create("uart2_conrx_seq");
     phase.raise_objection(this);
 
-    seq.start(virt_sqr);
-    sys_vif.report_int();
+    uart2_stx_seq.start(virt_sqr);
+    uart2_contx_seq.start(virt_sqr);
+    uart2_srx_seq.start(virt_sqr);
+    uart2_conrx_seq.start(virt_sqr);
 
-    #100ns;
+    #1us;
 
     phase.drop_objection(this);
 endtask: main_phase

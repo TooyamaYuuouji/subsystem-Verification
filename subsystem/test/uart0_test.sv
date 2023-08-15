@@ -25,15 +25,18 @@ function void uart0_test::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task uart0_test::main_phase(uvm_phase phase);
-    uart0_seq seq;
+    uart0_single_rx_seq uart0_srx_seq;
+    uart0_continue_rx_seq uart0_conrx_seq;
 
-    seq = uart0_seq::type_id::create("seq");
+    uart0_srx_seq = uart0_single_rx_seq::type_id::create("uart0_srx_seq");
+    uart0_conrx_seq = uart0_continue_rx_seq::type_id::create("uart0_conrx_seq");
     phase.raise_objection(this);
 
-    seq.start(virt_sqr);
-    sys_vif.report_int();
+    uart0_srx_seq.start(virt_sqr);
+    uart0_conrx_seq.start(virt_sqr);
+    // sys_vif.report_int();
 
-    #100ns;
+    #1us;
 
     phase.drop_objection(this);
 endtask: main_phase
