@@ -2,7 +2,7 @@
 # variable
 FILELIST = filelist.f
 TB = top_tb
-TESTNAME = uart2_test
+TESTNAME = timer1_test
 VERB = UVM_LOW
 SEED = 5
 VDB = out.vdb
@@ -37,8 +37,9 @@ run:
 	$(RUN) +UVM_TESTNAME=$(TESTNAME)
 
 reg_run:
+	$(COMP) -cm line+cond+fsm+tgl+branch+assert -cm_dir $(VDB)
 	for ii in $(REGRESSION_LIST); do \
-		$(RUN) +UVM_TESTNAME=$$ii; \
+		./$(TB).simv -sml +UVM_TESTNAME=$$ii +UVM_VERBOSITY=$(VERB) +ntb_random_seed=$(SEED) -l reg_run.log -cm line+cond+fsm+tgl+branch+assert -covg_cont_on_error -cm_dir $(VDB) -cm_name $$ii ; \
 	done
 
 urg:
