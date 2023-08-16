@@ -1,0 +1,245 @@
+register WDOGLOAD {
+    bytes 4;
+
+    field LOAD_VALUE {
+        bits 32;
+        reset 32'hffffffff;
+        access rw;
+    }
+}
+
+register WDOGVALUE {
+    bytes 4;
+
+    field VALUE {
+        bits 32;
+        reset 32'hffffffff;
+        access ro;
+    }
+}
+
+register WDOGCONTROL {
+    bytes 4;
+
+    field CONTROL {
+        bits 2;
+        reset 2'b00;
+        access rw;
+    }
+}
+
+register WDOGINTCLR {
+    bytes 4;
+
+    field INT {
+        bits 1;
+        reset 1'b0;
+        access wo;
+    }
+}
+
+register WDOGRIS {
+    bytes 4;
+
+    field RIS {
+        bits 1;
+        reset 1'b0;
+        access ro;
+    }
+}
+
+register WDOGMIS {
+    bytes 4;
+
+    field MIS {
+        bits 1;
+        reset 1'b0;
+        access ro;
+    }
+}
+
+register WDOGLOCK {
+    bytes 4;
+
+    field LOCK {
+        bits 32;
+        reset 32'h0;
+        access rw;
+    }
+}
+
+register WDOGITCR {
+    bytes 4;
+
+    field ITCR {
+        bits 1;
+        reset 1'b0;
+        access rw;
+    }
+}
+
+register WDOGITOP {
+    bytes 4;
+
+    field ITOP {
+        bits 2;
+        reset 2'b0;
+        access wo;
+    }
+}
+
+register WDOGPERIPHID4 {
+    bytes 4;
+
+    field  PERIPHID4 {
+        bits 8;
+        reset 8'h04;
+        access ro;
+    }
+}
+
+register WDOGPERIPHID5a {
+    bytes 4;
+
+    field PERIPHID5a {
+        bits 8;
+        reset 8'h00;
+        access ro;
+    }
+}
+
+register WDOGPERIPHID6a {
+    bytes 4;
+
+    field PERIPHID6a {
+        bits 8;
+        reset 8'h00;
+        access ro;
+    }
+}
+
+register WDOGPERIPHID7a {
+    bytes 4;
+
+    field PERIPHID7a {
+        bits 8;
+        reset 8'h00;
+        access ro;
+    }
+}
+
+register WDOGPERIPHID0 {
+    bytes 4;
+
+    field PERIPHID0 {
+        bits 8;
+        reset 8'h24;
+        access ro;
+    }
+}
+
+register WDOGPERIPHID1 {
+    bytes 4;
+
+    field PERIPHID1 {
+        bits 8;
+        reset 8'hB8;
+        access ro;
+    }
+}
+
+register WDOGPERIPHID2 {
+    bytes 4;
+
+    field PERIPHID2 {
+        bits 8;
+        reset 8'h1B;
+        access ro;
+    }
+}
+
+register WDOGPERIPHID3 {
+    bytes 4;
+
+    field PERIPHID3 {
+        bits 8;
+        reset 8'h00;
+        access ro;
+    }
+}
+
+register WDOGPCELLID0 {
+    bytes 4;
+
+    field PCELLID0 {
+        bits 8;
+        reset 8'h0D;
+        access ro;
+    }
+}
+
+register WDOGPCELLID1 {
+    bytes 4;
+
+    field PCELLID1 {
+        bits 8;
+        reset 8'hF0;
+        access ro;
+    }
+}
+
+register WDOGPCELLID2 {
+    bytes 4;
+
+    field PCELLID2 {
+        bits 8;
+        reset 8'h05;
+        access ro;
+    }
+}
+
+register WDOGPCELLID3 {
+    bytes 4;
+
+    field PCELLID3 {
+        bits 8;
+        reset 8'hB1;
+        access ro;
+    }
+}
+
+register WDOGRESERVE {
+    bytes 4;
+
+    field RESERVE {
+        bits 8;
+        reset 8'h0;
+        access ro;
+    }
+}
+
+block ral_watchdog {
+    bytes 100;
+    register WDOGLOAD @'h000;
+    register WDOGVALUE @'h004;
+    register WDOGCONTROL @'h008;
+    register WDOGINTCLR @'h00C;
+    register WDOGRIS @'h010;
+    register WDOGMIS @'h014;
+    register WDOGLOCK @'hC00;
+    register WDOGITCR @'hF00;
+    register WDOGITOP @'hF04;
+    register WDOGPERIPHID4 @'hFD0;
+    register WDOGPERIPHID5a @'hFD4;
+    register WDOGPERIPHID6a @'hFD8;
+    register WDOGPERIPHID7a @'hFDC;
+    register WDOGPERIPHID0 @'hFE0;
+    register WDOGPERIPHID1 @'hFE4;
+    register WDOGPERIPHID2 @'hFE8;
+    register WDOGPERIPHID3 @'hFEC;
+    register WDOGPCELLID0 @'hFF0;
+    register WDOGPCELLID1 @'hFF4;
+    register WDOGPCELLID2 @'hFF8;
+    register WDOGPCELLID3 @'hFFC;
+    register WDOGRESERVE @'hFC0;
+}

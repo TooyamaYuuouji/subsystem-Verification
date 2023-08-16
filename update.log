@@ -48,6 +48,9 @@ VIP基本框架搭建完成
 # 0.35v
 仿照timer，完成uart
 
+# 0.36v（<-2.16v）
+仿照timer，完成watchdog
+
 # 1.00v
 
 # 2.00v
