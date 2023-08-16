@@ -1,6 +1,7 @@
-//
-// use internal clock as counter clock and use external clock enable also
-// enable interrupt
+//------------------------------------------------------------------------------
+// 对timer1进行测试
+// 检查点：
+// + 使用内部信号作为计数器的计数信号，但将外部信号视为时钟使能信号。开启中断
 
 class timer1_external_enable_seq extends base_seq;
 
@@ -20,12 +21,15 @@ function timer1_external_enable_seq::new(string name="timer1_external_enable_seq
 endfunction: new
 
 task timer1_external_enable_seq::body();
-    ahbl_single_w32_seq seq1;
+    ahbl_single_w32_seq ahbl_sw32_seq;
+    int counter_value;
 
-    seq1 = ahbl_single_w32_seq::type_id::create("seq1");
-    `uvm_do_with(seq1, {seq1.seq_addr == `TIMER1_RELOAD_OFFSET; seq1.seq_data == 32'd14;})
-    `uvm_do_with(seq1, {seq1.seq_addr == `TIMER1_CTRL_OFFSET; seq1.seq_data == 8'b0000_1011;})
-    wait(p_sequencer.sys_vif.apbsubsys_interrupt[9] == 1);
-    `uvm_do_with(seq1, {seq1.seq_addr == `TIMER1_INTCLEAR_OFFSET; seq1.seq_data == 32'd1;})
-    `uvm_do_with(seq1, {seq1.seq_addr == `TIMER1_CTRL_OFFSET; seq1.seq_data == 32'd0;})
+    ahbl_sw32_seq = ahbl_single_w32_seq::type_id::create("ahbl_sw32_seq");
+    std::randomize(counter_value) with {counter_value > 1 && counter_value < 300;};
+    `uvm_info("DEBUG", $sformatf("counter_value in timer1=%d", counter_value), UVM_LOW)
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `TIMER1_RELOAD_OFFSET; ahbl_sw32_seq.seq_data == counter_value;})
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `TIMER1_CTRL_OFFSET; ahbl_sw32_seq.seq_data == 8'b0000_1011;})
+    wait(p_sequencer.sys_vif.apbsubsys_interrupt[`TIMER1_IRQ] == 1);
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `TIMER1_INTCLEAR_OFFSET; ahbl_sw32_seq.seq_data == 32'd1;})
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `TIMER1_CTRL_OFFSET; ahbl_sw32_seq.seq_data == 32'd0;})
 endtask: body

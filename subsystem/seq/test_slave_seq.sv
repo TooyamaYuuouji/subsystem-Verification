@@ -1,3 +1,7 @@
+//------------------------------------------------------------------------------
+// 对test_slave进行测试
+// 检查点：
+// + 对不同的DATA寄存器写入数据时，pready线上低电平的持续时间不同，即写入成功前的等待周期不同
 
 class test_slave_seq extends base_seq;
 
@@ -16,55 +20,15 @@ function test_slave_seq::new(string name="test_slave_seq");
 endfunction: new
 
 task test_slave_seq::body();
-    // `uvm_do_with(ahbl_tr, {
-    //     hsel == 1'b1;
-    //     hwrite == 1'b1;
-    //     addr == 16'hB000;
-    //     wdata == 32'd0;
-    //     htrans == NONSEQUENTIAL;
-    //     hsize == TRANS_SIZE_32BIT;
-    //     hburst == SINGLE;
-    // })
-    // #200ns;
-    // `uvm_do_with(ahbl_tr, {
-    //     hsel == 1'b1;
-    //     hwrite == 1'b1;
-    //     addr == 16'hB000 + 16'h0004;
-    //     wdata == 32'd0;
-    //     htrans == NONSEQUENTIAL;
-    //     hsize == TRANS_SIZE_32BIT;
-    //     hburst == SINGLE;
-    // })
-    // #200ns;
-    // `uvm_do_with(ahbl_tr, {
-    //     hsel == 1'b1;
-    //     hwrite == 1'b1;
-    //     addr == 16'hB000 + 16'h0008;
-    //     wdata == 32'd0;
-    //     htrans == NONSEQUENTIAL;
-    //     hsize == TRANS_SIZE_32BIT;
-    //     hburst == SINGLE;
-    // })
-    // #200ns;
-    // `uvm_do_with(ahbl_tr, {
-    //     hsel == 1'b1;
-    //     hwrite == 1'b1;
-    //     addr == 16'hB000 + 16'h000C;
-    //     wdata == 32'd0;
-    //     htrans == NONSEQUENTIAL;
-    //     hsize == TRANS_SIZE_32BIT;
-    //     hburst == SINGLE;
-    // })
+    ahbl_single_w32_seq ahbl_sw32_seq;
 
-    ahbl_single_w32_seq seq1;
-
-    seq1 = ahbl_single_w32_seq::type_id::create("seq1");
-    `uvm_do_with(seq1, {seq1.seq_addr == `APB_TEST_SLAVE_DATA0_OFFSET; seq1.seq_data == 32'd0;})
+    ahbl_sw32_seq = ahbl_single_w32_seq::type_id::create("ahbl_sw32_seq");
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `APB_TEST_SLAVE_DATA0_OFFSET; ahbl_sw32_seq.seq_data == 32'd0;})
     #200ns;
-    `uvm_do_with(seq1, {seq1.seq_addr == `APB_TEST_SLAVE_DATA1_OFFSET; seq1.seq_data == 32'd0;})
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `APB_TEST_SLAVE_DATA1_OFFSET; ahbl_sw32_seq.seq_data == 32'd0;})
     #200ns;
-    `uvm_do_with(seq1, {seq1.seq_addr == `APB_TEST_SLAVE_DATA2_OFFSET; seq1.seq_data == 32'd0;})
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `APB_TEST_SLAVE_DATA2_OFFSET; ahbl_sw32_seq.seq_data == 32'd0;})
     #200ns;
-    `uvm_do_with(seq1, {seq1.seq_addr == `APB_TEST_SLAVE_DATA3_OFFSET; seq1.seq_data == 32'd0;})
+    `uvm_do_with(ahbl_sw32_seq, {ahbl_sw32_seq.seq_addr == `APB_TEST_SLAVE_DATA3_OFFSET; ahbl_sw32_seq.seq_data == 32'd0;})
     #200ns;
 endtask: body

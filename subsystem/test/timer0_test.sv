@@ -1,3 +1,5 @@
+//------------------------------------------------------------------------------
+// 对timer0进行测试
 
 class timer0_test extends base_test;
 
@@ -25,19 +27,19 @@ function void timer0_test::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task timer0_test::main_phase(uvm_phase phase);
-    timer0_internal_clock_seq seq_in;
-    timer0_external_clock_seq seq_ex;
-    timer0_external_enable_seq seq_exen;
+    timer0_internal_clock_seq timer0_inclk_seq;
+    timer0_external_clock_seq timer0_exclk_seq;
+    timer0_external_enable_seq timer0_exen_seq;
 
-    seq_in = timer0_internal_clock_seq::type_id::create("seq_in");
-    seq_ex = timer0_external_clock_seq::type_id::create("seq_ex");
-    seq_exen = timer0_external_enable_seq::type_id::create("seq_exen");
+    timer0_inclk_seq = timer0_internal_clock_seq::type_id::create("timer0_inclk_seq");
+    timer0_exclk_seq = timer0_external_clock_seq::type_id::create("timer0_exclk_seq");
+    timer0_exen_seq = timer0_external_enable_seq::type_id::create("timer0_exen_seq");
     phase.raise_objection(this);
-    seq_in.start(virt_sqr);
+    timer0_inclk_seq.start(virt_sqr);
     #500ns;
-    seq_ex.start(virt_sqr);
+    timer0_exclk_seq.start(virt_sqr);
     #500ns;
-    seq_exen.start(virt_sqr);
+    timer0_exen_seq.start(virt_sqr);
     phase.drop_objection(this);
 endtask: main_phase
 

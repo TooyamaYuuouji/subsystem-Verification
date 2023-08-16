@@ -1,3 +1,5 @@
+//------------------------------------------------------------------------------
+// 对uart0进行测试
 
 class uart0_test extends base_test;
 
@@ -25,16 +27,15 @@ function void uart0_test::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task uart0_test::main_phase(uvm_phase phase);
-    uart0_single_rx_seq uart0_srx_seq;
-    uart0_continue_rx_seq uart0_conrx_seq;
+    uart0_single_tx_seq uart0_srx_seq;
+    uart0_continue_tx_seq uart0_conrx_seq;
 
-    uart0_srx_seq = uart0_single_rx_seq::type_id::create("uart0_srx_seq");
-    uart0_conrx_seq = uart0_continue_rx_seq::type_id::create("uart0_conrx_seq");
+    uart0_srx_seq = uart0_single_tx_seq::type_id::create("uart0_srx_seq");
+    uart0_conrx_seq = uart0_continue_tx_seq::type_id::create("uart0_conrx_seq");
     phase.raise_objection(this);
 
     uart0_srx_seq.start(virt_sqr);
     uart0_conrx_seq.start(virt_sqr);
-    // sys_vif.report_int();
 
     #1us;
 

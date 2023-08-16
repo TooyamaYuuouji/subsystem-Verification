@@ -1,3 +1,6 @@
+//------------------------------------------------------------------------------
+// 外部APB设备的接口
+
 interface perips_interface(input bit pclk, input bit presetn);
 
     logic[31:0] paddr;

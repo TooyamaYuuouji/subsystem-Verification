@@ -1,3 +1,6 @@
+//------------------------------------------------------------------------------
+// 系统接口，除AHB和APB之外的部分
+
 interface system_interface(input bit sys_clk, input bit sys_rstn);
 
     logic uart0_rxd;
@@ -18,6 +21,7 @@ interface system_interface(input bit sys_clk, input bit sys_rstn);
     /**************************************************
     * function and task
     **************************************************/
+    // 打印当前时刻，中断线上的情况
     function void report_int();
         string str = "";
 
@@ -37,6 +41,7 @@ interface system_interface(input bit sys_clk, input bit sys_rstn);
         $display(str);
     endfunction: report_int
 
+    // 仿真rx波形，供uart模块接收时使用
     task simulate_rx(input int clk_count);
         logic[7:0] rx_value;
         int index;
